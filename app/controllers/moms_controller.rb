@@ -14,8 +14,9 @@ class MomsController < ApplicationController
 
   def create
     @mom = Mom.new(mom_params)
+    @mom.user = current_user
     if @mom.save
-      redirect_to list_path(@list)
+      redirect_to moms_path
     else
       render :new
     end
