@@ -8,6 +8,12 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    new_mom_midwife_path
+    if Mom.find(current_user.id)
+      moms_path
+    elsif Midwife.find(current_user.id)
+      midwives_path
+    else
+      new_mom_midwife_path
+    end
   end
 end

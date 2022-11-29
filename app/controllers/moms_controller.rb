@@ -2,9 +2,7 @@ class MomsController < ApplicationController
   before_action :set_mom, only: []
   before_action :set_bookmark, only: []
 
-  def index
-    @moms = Mom.all
-  end
+  def index; end
 
   def show; end
 
@@ -30,7 +28,7 @@ class MomsController < ApplicationController
   private
 
   def set_list
-    @midwife = Midwife.find(params[:list_id])
+    @midwife = Midwife.find(params[:midwife_id])
   end
 
   def set_mom

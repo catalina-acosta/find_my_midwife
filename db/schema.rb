@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_29_124141) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_29_135310) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "status", default: 0
+    t.bigint "mom_id", null: false
+    t.bigint "midwife_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["midwife_id"], name: "index_bookings_on_midwife_id"
+    t.index ["mom_id"], name: "index_bookings_on_mom_id"
+  end
 
   create_table "midwives", force: :cascade do |t|
     t.string "speciality"
@@ -50,6 +60,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_124141) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "midwives"
+  add_foreign_key "bookings", "moms"
   add_foreign_key "midwives", "users"
   add_foreign_key "moms", "users"
 end
