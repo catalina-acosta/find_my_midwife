@@ -14,7 +14,6 @@ class MomsController < ApplicationController
 
   def create
     @mom = Mom.new(mom_params)
-    @mom.list = @list
     if @mom.save
       redirect_to list_path(@list)
     else

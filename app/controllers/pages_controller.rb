@@ -3,4 +3,9 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def new_mom_midwife
+    @midwife = Midwife.new
+    @mom = Mom.new
+  end
 end
