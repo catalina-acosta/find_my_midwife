@@ -55,7 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_135310) do
     t.string "last_name"
     t.string "street_no"
     t.string "city_po"
-    t.string "midwife"
+    t.boolean "is_midwife", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

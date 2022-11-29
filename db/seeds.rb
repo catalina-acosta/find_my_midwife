@@ -33,7 +33,7 @@ user1 = User.new do |u|
   u.email = "sebi@jamable.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "false"
+  u.is_midwife = false
 end
 user1.save
 
@@ -45,7 +45,7 @@ user2 = User.new do |u|
   u.email = "sebi1@jamable.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "false"
+  u.is_midwife = false
 end
 user2.save
 
@@ -57,7 +57,7 @@ user3 = User.new do |u|
   u.email = "sebi2@jamable.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "false"
+  u.is_midwife = false
 end
 user3.save
 
@@ -69,7 +69,7 @@ user4 = User.new do |u|
   u.email = "sebi3@jamable.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "false"
+  u.is_midwife = false
 end
 user4.save
 
@@ -81,7 +81,7 @@ user5 = User.new do |u|
   u.email = "sebi4@jamable.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "false"
+  u.is_midwife = false
 end
 user5.save
 
@@ -93,7 +93,7 @@ user6 = User.new do |u|
   u.email = "sebi5@jamable.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "false"
+  u.is_midwife = false
 end
 user6.save
 
@@ -105,7 +105,7 @@ user7 = User.new do |u|
   u.email = "sebi6@jamable.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "false"
+  u.is_midwife = false
 end
 user7.save
 
@@ -117,7 +117,7 @@ user8 = User.new do |u|
   u.email = "sebi7@jamable.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "false"
+  u.is_midwife = false
 end
 user8.save
 
@@ -129,7 +129,7 @@ user9 = User.new do |u|
   u.email = "sebi8@jamable.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "false"
+  u.is_midwife = false
 end
 user9.save
 
@@ -141,7 +141,7 @@ user10 = User.new do |u|
   u.email = "sebi9@jamable.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "false"
+  u.is_midwife = false
 end
 user10.save
 
@@ -153,7 +153,7 @@ user11 = User.new do |u|
   u.email = "sebi10@jamable.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "false"
+  u.is_midwife = false
 end
 user11.save
 
@@ -165,7 +165,7 @@ user12 = User.new do |u|
   u.email = "sebi12@jamable.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "false"
+  u.is_midwife = false
 end
 user12.save
 
@@ -177,7 +177,7 @@ user13 = User.new do |u|
   u.email = "sebi13@jamable.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "false"
+  u.is_midwife = false
 end
 user13.save
 
@@ -189,7 +189,7 @@ user14 = User.new do |u|
   u.email = "sebi14@jamable.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "false"
+  u.is_midwife = false
 end
 user14.save
 
@@ -201,7 +201,7 @@ user15 = User.new do |u|
   u.email = "sebi15@jamable.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "false"
+  u.is_midwife = false
 end
 user15.save
 
@@ -213,7 +213,7 @@ user16 = User.new do |u|
   u.email = "sebi16@jamable.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "false"
+  u.is_midwife = false
 end
 user16.save
 
@@ -225,7 +225,7 @@ user17 = User.new do |u|
   u.email = "sebi17@jamable.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "false"
+  u.is_midwife = false
 end
 user17.save
 
@@ -237,7 +237,7 @@ user18 = User.new do |u|
   u.email = "sebi18@jamable.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "false"
+  u.is_midwife = false
 end
 user18.save
 
@@ -249,7 +249,7 @@ user19 = User.new do |u|
   u.email = "sebi19@jamable.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "false"
+  u.is_midwife = false
 end
 user19.save
 
@@ -262,7 +262,7 @@ user20 = User.new do |u|
   u.email = "stormbreaker@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "true"
+  u.is_midwife = true
 end
 user20.save
 
@@ -274,7 +274,7 @@ user21 = User.new do |u|
   u.email = "spanish@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "true"
+  u.is_midwife = true
 end
 user21.save
 
@@ -286,7 +286,7 @@ user22 = User.new do |u|
   u.email = "midwife@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "true"
+  u.is_midwife = true
 end
 user22.save
 
@@ -298,7 +298,7 @@ user23 = User.new do |u|
   u.email = "midwife1@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "true"
+  u.is_midwife = true
 end
 user23.save
 
@@ -310,7 +310,7 @@ user24 = User.new do |u|
   u.email = "midwife2@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "true"
+  u.is_midwife = true
 end
 user24.save
 
@@ -322,7 +322,7 @@ user25 = User.new do |u|
   u.email = "midwife3@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "true"
+  u.is_midwife = true
 end
 user25.save
 
@@ -334,7 +334,7 @@ user26 = User.new do |u|
   u.email = "midwife4@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "true"
+  u.is_midwife = true
 end
 user26.save
 
@@ -346,7 +346,7 @@ user25 = User.new do |u|
   u.email = "midwife5@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "true"
+  u.is_midwife = true
 end
 user25.save
 
@@ -358,7 +358,7 @@ user26 = User.new do |u|
   u.email = "midwife6@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "true"
+  u.is_midwife = true
 end
 user26.save
 
@@ -370,7 +370,7 @@ user27 = User.new do |u|
   u.email = "midwife7@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "true"
+  u.is_midwife = true
 end
 user27.save
 
@@ -382,7 +382,7 @@ user28 = User.new do |u|
   u.email = "midwife8@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
-  u.midwife = "true"
+  u.is_midwife = true
 end
 user28.save
 

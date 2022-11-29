@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :moms, dependent: :destroy
-  has_many :midwives, dependent: :destroy
+  has_one :mom, dependent: :destroy
+  has_one :midwife, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

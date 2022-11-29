@@ -1,4 +1,4 @@
-<% if current_user.midwife == "false" %>
+<% if !current_user.is_midwife %>
   <%= simple_form_for @mom do |f| %>
     <%= f.input :due_date, as: :date, html5: true, class: 'btn btn-flat'%>
     <%= f.input :phone , class: 'btn btn-flat' %>

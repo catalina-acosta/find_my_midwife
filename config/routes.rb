@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'pages#home'
+  root to: 'moms#index'
   get 'mom_midwife_signup', to: 'pages#new_mom_midwife', as: :new_mom_midwife
 
   devise_for :users
