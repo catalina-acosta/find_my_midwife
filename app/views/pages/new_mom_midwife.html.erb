@@ -1,0 +1,14 @@
+<% if current_user.midwife == false %>
+  <%= simple_form_for @mom do |f| %>
+    <%= f.input :due_date, as: :date, html5: true, class: 'btn btn-flat'%>
+    <%= f.input :phone , class: 'btn btn-flat' %>
+    <%= f.submit class: 'btn btn-flat' %>
+  <% end %>
+<% else %>
+  <%= simple_form_for @midwife do |f| %>
+    <%= f.input :speciality , class: 'btn btn-flat' %>
+    <%= f.input :years_experience , class: 'btn btn-flat' %>
+    <%= f.input :availability, as: :date, html5: true, class: 'btn btn-flat' %>
+    <%= f.submit class: 'btn btn-flat' %>
+  <% end %>
+<% end %>

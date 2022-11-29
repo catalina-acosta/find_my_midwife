@@ -1,6 +1,6 @@
 class MidwivesController < ApplicationController
-  before_action :set_list, only: [:edit, :update, :show, :create, :new]
-  before_action :set_Midwife, only: [:edit, :update, :show, :destroy]
+  before_action :set_mom, only: []
+  before_action :set_midwife, only: []
 
   def index
     @midwives = Midwife.all
@@ -13,24 +13,24 @@ class MidwivesController < ApplicationController
   end
 
   def create
-    @midwife = Midwife.new(Midwife_params)
-    @midwife.user = @user
-    if @Midwife.save
-      redirect_to midwife_path(@midwife)
+    @midwife = Midwife.new(midwife_params)
+    @midwife.user = current_user
+    if @midwife.save
+      redirect_to midwives_path
     else
       render :new
     end
   end
 
   def destroy
-    @mom.destroy
+    @midwife.destroy
     redirect_to root_path
   end
 
   private
 
-  def set_list
-    @midwife = Midwife.find(params[:list_id])
+  def set_mom
+    @mom = Mom.find(params[:list_id])
   end
 
   def set_midwife
@@ -38,6 +38,6 @@ class MidwivesController < ApplicationController
   end
 
   def midwife_params
-    params.require(:midwife).permit(:due_date, :phone, :user_id)
+    params.require(:midwife).permit(:speciality, :years_experience, :availability)
   end
 end
