@@ -1,4 +1,3 @@
-<div class="container">
   <% if @midwives.empty? %>
     <div>
       <p>There are no midwives currently available</p>
@@ -8,10 +7,10 @@
       <% @midwives.each do |midwife| %>
         <div class="card-body">
           <h5 class="card-title"><%= midwife.user.first_name %> <%= midwife.user.last_name %></h5>
-          <p class="card-text">Speciality: <%= midwife.speciality %> <%= midwife.years_experience %></p>
+          <p class="card-text">Speciality: <%= midwife.speciality %></p>
+          <p class="card-text">Years of experience:<%= midwife.years_experience %></p>
           <%= link_to 'View Profile', midwife_path(midwife) , class: "btn btn-primary" %>
         </div>
       <% end %>
     </div>
   <% end %>
-</div>

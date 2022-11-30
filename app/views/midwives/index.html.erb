@@ -21,6 +21,7 @@
         <%# <h4><%= calendar(number_of_days: 1) do |date| %>
           <%# <%= date.day %>
         <%# <% end %>
+        <%= current_user.midwife.upcoming_appointment.booking.mom.first_name %>
       </div>
       <div class="info-card">
         <h5>date and time</h5>
