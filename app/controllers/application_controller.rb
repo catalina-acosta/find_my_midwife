@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
   def set_no_navbar
     @no_navbar = true
   end
+
+  def set_no_navbar
+    @no_navbar = true
+  end
 end

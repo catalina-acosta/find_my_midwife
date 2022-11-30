@@ -1,8 +1,9 @@
-
-<% unless @no_navbar%>
+<% unless @no_navbar %>
     <% if current_user.is_midwife %>
       <div class="navbar-fymw" id="navbar-midwife">
+        <%= link_to midwife_bookings_path(current_user.midwife) do %>
         <i class="fa-solid fa-user-check" class="icon"></i>
+        <% end  %>
         <i class="fa-solid fa-calendar-check" class="icon"></i>
           <%= link_to midwives_path do %>
         <i class="fa-solid fa-house" class="icon"></i>
