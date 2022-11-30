@@ -1,13 +1,20 @@
 .background-card{
-  background-color:#7FE9DE;
+  background-color:#68B4AC;
   display: flex;
   align-items: top;
   justify-content: space-between;
   padding: 16px;
+  border-radius: 10px;
 }
 .inner-card{
   display: flex;
+  background-color: #F6F8F8;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: flex-start;
 }
 .info-card{
   display: flex;
+  background-color:#7FE9DE;
+  border-radius: 5px;
 }
