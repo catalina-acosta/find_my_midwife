@@ -1,6 +1,6 @@
 class MidwivesController < ApplicationController
-  before_action :set_mom, only: []
-  before_action :set_midwife, only: []
+  before_action :set_mom, only: [ ]
+  before_action :set_midwife, only: [ :show ]
 
   def index
     @midwives = Midwife.all
@@ -30,7 +30,7 @@ class MidwivesController < ApplicationController
   private
 
   def set_mom
-    @mom = Mom.find(params[:list_id])
+    @mom = Mom.find(params[:mom_id])
   end
 
   def set_midwife

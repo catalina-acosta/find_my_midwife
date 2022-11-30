@@ -1,1 +1,4 @@
-Shows midwife
+<h2><%= @midwife.user.first_name %><%= @midwife.user.last_name %></h2>
+<p>Available from:<%= @midwife.availability%> Speciality<%= @midwife.speciality%></p>
+<%= link_to 'Send Request', midwife_bookings_path(@midwife),  data: {turbo_method: :post}, class: 'btn btn-primary' %>
+<%= link_to 'Back', search_path, class: 'btn btn-primary' %>
