@@ -5,17 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body>
-    <%= render "shared/flashes" %>
-    <%= yield %>
-    <%= render "shared/navbar" %>
-    <footer>
-    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-    </footer>
+      <%= render "shared/flashes" %>
+  <div class="wrapper">
+    <div class="content">
+      <%= yield %>
+    </div>
+    <div class="footer">
+      <%= render "shared/navbar" %>
+    </div>
+  </div>
   </body>
 </html>
