@@ -2,14 +2,19 @@
     <% if current_user.is_midwife %>
       <div class="navbar-fymw" id="navbar-midwife">
         <%= link_to midwife_bookings_path(current_user.midwife) do %>
-        <i class="fa-solid fa-user-check" class="icon"></i>
+        <i class="fa-solid fa-user-check icon"></i>
         <% end  %>
-        <i class="fa-solid fa-calendar-check" class="icon"></i>
+        <i class="fa-solid fa-calendar-check icon"></i>
           <%= link_to midwives_path do %>
-        <i class="fa-solid fa-house" class="icon"></i>
+        <i class="fa-solid fa-house icon"></i>
           <% end %>
-        <i class="fa-solid fa-comment" class="icon"></i>
-        <i class="fa-solid fa-gear"class="icon"></i>
+        <i class="fa-solid fa-comment icon"></i>
+        <div class="dropup">
+          <i class="fa-solid fa-gear icon" data-bs-toggle="dropdown" aria-expanded="false"></i>
+          <ul class="dropdown-menu">
+            <%= button_to "Log out", destroy_user_session_path, method: :delete, data: {turbo: false}%>
+          </ul>
+        </div>
       </div>
     <% else %>
       <div class="navbar-fymw" id="navbar-mom">
