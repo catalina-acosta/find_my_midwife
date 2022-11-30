@@ -7,14 +7,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :street_no, :city_po, :is_midwife])
   end
 
-  def after_sign_in_path_for(resource)
-    if current_user.midwife.present?
-      midwives_path
-    elsif current_user.mom.present?
-      moms_path
-    else
-      new_mom_midwife_path
-    end
+  def set_no_navbar
+    @no_navbar = true
   end
 
   def set_no_navbar
