@@ -1,0 +1,7 @@
+<div class="container mt-5 text-center">
+  <%= month_calendar(events: @appointments) do |date| %>
+    <%= link_to new_booking_appointment_path do %>
+      <%= date.day %>
+    <% end %>
+  <% end %>
+</div>

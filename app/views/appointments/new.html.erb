@@ -1,1 +1,9 @@
-tihihi you have no appointment form yet
+  <%= simple_form_for [@booking, @appointment] do |f| %>
+    <%= f.input :title , class: 'btn btn-flat' %>
+    <%= f.input :start_date, as: :datetime, html5: true, class: 'btn btn-flat'%>
+    <%= f.submit class: 'btn btn-flat' %>
+  <% end %>
+
+<br>
+
+<%= link_to 'Back to appointments', booking_appointments_path%>
