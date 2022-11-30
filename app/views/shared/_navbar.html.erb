@@ -8,10 +8,15 @@
           <i class="fa-solid fa-calendar-check" class="icon"></i>
         <% end %>
           <%= link_to midwives_path do %>
-        <i class="fa-solid fa-house" class="icon"></i>
+        <i class="fa-solid fa-house icon"></i>
           <% end %>
-        <i class="fa-solid fa-comment" class="icon"></i>
-        <i class="fa-solid fa-gear"class="icon"></i>
+        <i class="fa-solid fa-comment icon"></i>
+        <div class="dropup">
+          <i class="fa-solid fa-gear icon" data-bs-toggle="dropdown" aria-expanded="false"></i>
+          <ul class="dropdown-menu">
+            <%= button_to "Log out", destroy_user_session_path, method: :delete, data: {turbo: false}%>
+          </ul>
+        </div>
       </div>
     <% else %>
       <div class="navbar-fymw" id="navbar-mom">

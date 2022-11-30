@@ -1,5 +1,12 @@
+#midwife-card {
+  background-color:#DC928D;
+}
+.outer-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 .background-card{
-  background-color:#68B4AC;
   display: flex;
   align-items: top;
   justify-content: space-between;
@@ -15,6 +22,8 @@
 }
 .info-card{
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   background-color:#7FE9DE;
   border-radius: 5px;
 }
