@@ -1,36 +1,26 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://png.pngtree.com/png-clipart/20210329/ourmid/pngtree-midwife-worker-holding-a-baby-for-international-midwives-day-illustration-png-image_3149541.jpg" %>
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
+<div class="wrapper">
+  <div></div>
+  <div>
+    <% if current_user.midwife? %>
+      <div class="navbar-fymw" id="navbar-midwife">
+        <i class="fa-solid fa-user-check" class="icon"></i>
+        <i class="fa-solid fa-calendar-check" class="icon"></i>
+        <%= link_to midwives_path(@midwife) do %>
+        <i class="fa-solid fa-house" class="icon"></i>
         <% end %>
-      </ul>
-    </div>
+        <i class="fa-solid fa-comment" class="icon"></i>
+        <i class="fa-solid fa-gear"class="icon"></i>
+      </div>
+    <% else %>
+      <div class="navbar-fymw" id="navbar-mom">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-calendar-check"></i>
+        <%= link_to midwives_path(@midwife) do %>
+          <i class="fa-solid fa-house"></i>
+        <% end %>
+        <i class="fa-solid fa-comment"></i>
+        <i class="fa-solid fa-gear"></i>
+      </div>
+    <% end %>
   </div>
 </div>

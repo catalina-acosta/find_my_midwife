@@ -1,18 +1,23 @@
 <div>
-  <div>
-    <h1>Hello <%= current_user.first_name.capitalize %> </h1>
-    <h3>here goes the avatar</h3>
-    <h3>🔔</h3>
+  <div class="index-header">
+    <div>
+      <h1>Hello,</h1>
+      <h1><%= current_user.first_name.capitalize %></h1>
+    </div>
+    <div id="right-header">
+      <%= image_tag "https://static.vecteezy.com/system/resources/previews/007/802/576/original/portrait-of-smiling-girl-avatar-of-woman-cartoon-character-brunette-with-square-haircut-illustration-flat-vector.jpg", class: "avatar-large"%>
+      <h3>🔔</h3>
+    </div>
   </div>
-  <div>
+  <div class="background-card">
     <h2>Appointments</h2>
     <h3>see all</h3>
   </div>
-  <div>
-  <%= image_tag "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", class: "avatar dropdown-toggle"%>
+  <div class="inner-card">
+  <%= image_tag "https://static.vecteezy.com/system/resources/previews/007/802/576/original/portrait-of-smiling-girl-avatar-of-woman-cartoon-character-brunette-with-square-haircut-illustration-flat-vector.jpg", class: "avatar"%>
     <h4>mom.name</h4>
   </div>
-  <div>
+  <div class="info-card">
     <h4>date and time</h4>
     <h4>address link to a map?</h4>
   </div>
