@@ -13,4 +13,5 @@ Rails.application.routes.draw do
 
   resources :moms
   get 'search', to: 'pages#search', as: :search
+  get 'calendar', to: 'pages#calendar', as: :calendar
 end

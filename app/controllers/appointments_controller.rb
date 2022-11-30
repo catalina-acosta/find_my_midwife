@@ -18,7 +18,7 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new(appointment_params)
     @appointment.booking_id = params[:booking_id]
     if @appointment.save
-      redirect_to booking_appointments_path
+      redirect_to calendar_path
     else
       render :new
     end
