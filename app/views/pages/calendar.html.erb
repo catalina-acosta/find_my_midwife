@@ -1,0 +1,13 @@
+<div class="container mt-5 text-center">
+  <%= month_calendar(events: @appointments) do |date, appointments| %>
+      <%= date.day %>
+    <% appointments.each do |appointment| %>
+      <div class="card-container">
+        <%= link_to mom_path(appointment.booking.mom) do %>
+          <%= appointment.title %>
+          <%= appointment.booking.mom.user.first_name %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

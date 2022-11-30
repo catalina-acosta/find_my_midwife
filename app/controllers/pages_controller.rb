@@ -1,5 +1,9 @@
 class PagesController < ApplicationController
 
+  def calendar
+    @appointments = current_user.midwife.appointments
+  end
+
   def home
     if current_user.mom.nil? && current_user.midwife.nil?
       redirect_to new_mom_midwife_path
