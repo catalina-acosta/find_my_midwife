@@ -1,0 +1,13 @@
+<div class="container">
+  <% if @midwives.empty? %>
+    <div>
+      <p>There are no midwives currently available</p>
+    </div>
+  <% else %>
+    <div class="">
+      <% @midwives.each do |midwife| %>
+        <%= midwife.user.first_name %> <%= midwife.user.last_name %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

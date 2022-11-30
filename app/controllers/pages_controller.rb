@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
-  before_action :set_mom, only: [ :search ]
   def home
     return redirect_to new_user_session_path unless current_user
   end

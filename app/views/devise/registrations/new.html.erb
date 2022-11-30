@@ -25,7 +25,7 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :midwife?,
+    <%= f.input :is_midwife,
                 :as => :select,
                 :collection => [['Midwife',true],['Mom',false]],
                 :include_blank => false,

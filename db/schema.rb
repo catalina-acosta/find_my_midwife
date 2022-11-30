@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_29_135310) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_29_171627) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appointments", force: :cascade do |t|
+    t.string "title"
+    t.date "date"
+    t.bigint "booking_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_appointments_on_booking_id"
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.integer "status", default: 0
@@ -55,11 +64,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_135310) do
     t.string "last_name"
     t.string "street_no"
     t.string "city_po"
-    t.string "midwife"
+    t.boolean "is_midwife", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "appointments", "bookings"
   add_foreign_key "bookings", "midwives"
   add_foreign_key "bookings", "moms"
   add_foreign_key "midwives", "users"

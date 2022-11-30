@@ -1,5 +1,5 @@
 class AddMidwifeToUser < ActiveRecord::Migration[7.0]
   def change
-    add_column :users, :midwife, :string
+    add_column :users, :is_midwife, :boolean, default: false
   end
 end
