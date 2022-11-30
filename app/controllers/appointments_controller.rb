@@ -16,6 +16,7 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = Appointment.new(appointment_params)
+    @appointment.booking_id = params[:booking_id]
     if @appointment.save
       redirect_to booking_appointments_path
     else
@@ -31,7 +32,6 @@ class AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit(:booking_id, :title, :start_date)
+    params.require(:appointment).permit(:booking_id, :title, :start_time)
   end
-
 end
