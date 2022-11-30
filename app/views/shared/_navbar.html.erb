@@ -1,7 +1,6 @@
-<div class="wrapper">
-  <div></div>
-  <div>
-    <% if current_user.midwife? %>
+
+<% unless controller.controller_name == 'pages' || controller.controller_name == 'sessions' %>
+    <% if current_user.is_midwife %>
       <div class="navbar-fymw" id="navbar-midwife">
         <i class="fa-solid fa-user-check" class="icon"></i>
         <i class="fa-solid fa-calendar-check" class="icon"></i>
@@ -22,5 +21,4 @@
         <i class="fa-solid fa-gear"></i>
       </div>
     <% end %>
-  </div>
-</div>
+  <% end %>
