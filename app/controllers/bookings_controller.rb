@@ -4,7 +4,11 @@ class BookingsController < ApplicationController
   before_action :set_midwife, only: [:create]
 
   def index
-    @bookings = Booking.all
+    if current_user.is_midwife?
+      @bookings = Booking.where(midwife: current_user.midwife)
+    else
+      @bookings = Booking.where(mom: current_user.mom)
+    end
   end
 
   def show; end

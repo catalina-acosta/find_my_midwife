@@ -9,16 +9,26 @@
       <h3>🔔</h3>
     </div>
   </div>
-  <div class="background-card">
-    <h2>Appointments</h2>
-    <h3>see all</h3>
-  </div>
-  <div class="inner-card">
-  <%= image_tag "https://static.vecteezy.com/system/resources/previews/007/802/576/original/portrait-of-smiling-girl-avatar-of-woman-cartoon-character-brunette-with-square-haircut-illustration-flat-vector.jpg", class: "avatar"%>
-    <h4>mom.name</h4>
-  </div>
-  <div class="info-card">
-    <h5>date and time</h5>
-    <h5>address link to a map?</h5>
+  <div>
+    <div class="outer-card">
+      <div class="background-card" id="midwife-card">
+        <h2>Appointments</h2>
+        <h3>see all</h3>
+      </div>
+      <div class="inner-card">
+        <%= image_tag "https://static.vecteezy.com/system/resources/previews/007/802/576/original/portrait-of-smiling-girl-avatar-of-woman-cartoon-character-brunette-with-square-haircut-illustration-flat-vector.jpg", class: "avatar"%>
+        <h4>mom.name</h4>
+        <%# <h4><%= calendar(number_of_days: 1) do |date| %>
+          <%# <%= date.day %>
+        <%# <% end %>
+      </div>
+      <div class="info-card">
+        <h5>date and time</h5>
+        <h5>address link to a map?</h5>
+        <%# <% current_user.midwife.bookings do |booking|%>
+          <%# <%= booking.status %>
+        <%# <% end %>
+      </div>
+    </div>
   </div>
 </div>
