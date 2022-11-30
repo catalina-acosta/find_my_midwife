@@ -36,6 +36,6 @@ class MomsController < ApplicationController
   end
 
   def mom_params
-    params.require(:mom).permit(:due_date, :phone, :user_id)
+    params.require(:mom).permit(:due_date, :phone, :user_id, :photo)
   end
 end
