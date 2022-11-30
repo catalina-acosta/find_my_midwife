@@ -37,7 +37,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def midwife_params
+  def booking_params
     params.require(:booking).permit(:mom_id, :midwife_id, :status)
   end
 end
