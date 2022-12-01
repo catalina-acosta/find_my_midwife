@@ -1,1 +1,59 @@
-<%= link_to "Find your midwife", search_path , class: "btn" %>
+<div>
+  <div class="index-header">
+    <div>
+      <h1>Hello,</h1>
+      <h1><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h1>
+    </div>
+    <div id="right-header">
+      <%= cl_image_tag current_user.mom.photo.key, class: "avatar-large"%>
+    </div>
+  </div>
+  <div>
+    <div class="container">
+      <div class="outer-card mb-5" id="mom-card">
+        <div class="background-card">
+          <h2>Upcoming Appointment</h2>
+          <h3>see all</h3>
+        </div>
+        <% if !current_user.mom.upcoming_appointment.nil? %>
+          <div class="inner-card">
+            <div class="name-avatar">
+              <%= cl_image_tag current_user.mom.upcoming_appointment.booking.midwife.photo.key , class: "avatar"%>
+              <h4><%= current_user.mom.upcoming_appointment.booking.midwife.user.first_name %> <%= current_user.mom.upcoming_appointment.booking.midwife.user.last_name %> - <%= current_user.midwife.upcoming_appointment.title %></h4>
+            </div>
+            <div class="border"></div>
+            <div class="info-card">
+              <h5><i class="fa fa-clock"></i> <%= current_user.mom.upcoming_appointment.start_time %> </h5>
+            </div>
+          </div>
+        <% else %>
+          <p>You have no upcoming appointment</p>
+        <% end %>
+      </div>
+    </div>
+      <div class="container">
+      <div class="outer-card" id="mom-card">
+        <div class="background-card">
+          <h2>My Midwife</h2>
+          <h3>see all</h3>
+        </div>
+        <% if current_user.mom.recent_booking %>
+          <div class="inner-card">
+            <div class="name-avatar">
+              <%= cl_image_tag current_user.mom.recent_booking.midwife.photo.key, class: "avatar"%>
+              <h4><%= current_user.mom.recent_booking.mom.user.first_name %> <%= current_user.mom.recent_booking.midwife.user.last_name %></h4>
+            </div>
+            <div class="border"></div>
+            <div class="info-card">
+              <h5> Specialty: <%= current_user.mom.recent_booking.midwife.speciality %> </h5>
+              <h5> Experience: <%= current_user.mom.recent_booking.midwife.years_experience %></h5>
+            </div>
+          </div>
+        <% else %>
+          <p><%= link_to "Find My Midwife", search_path, class:"btn btn-primary" %></p>
+        <% end %>
+      </div>
+    </div>
+    </div>
+</div>
+
