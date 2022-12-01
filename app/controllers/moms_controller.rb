@@ -2,7 +2,9 @@ class MomsController < ApplicationController
   before_action :set_mom, only: []
   before_action :set_bookmark, only: []
 
-  def index; end
+  def index
+    return redirect_to midwives_path if current_user.is_midwife
+  end
 
   def show; end
 

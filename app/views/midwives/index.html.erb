@@ -2,50 +2,59 @@
   <div class="index-header">
     <div>
       <h1>Hello,</h1>
-      <h1><%= current_user.first_name.capitalize %></h1>
+      <h1><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h1>
     </div>
     <div id="right-header">
-      <%= image_tag "https://static.vecteezy.com/system/resources/previews/007/802/576/original/portrait-of-smiling-girl-avatar-of-woman-cartoon-character-brunette-with-square-haircut-illustration-flat-vector.jpg", class: "avatar-large"%>
-      <h3>🔔</h3>
+      <%= cl_image_tag current_user.midwife.photo.key, class: "avatar-large"%>
     </div>
   </div>
   <div>
     <div class="container">
       <div class="outer-card mb-5" id="midwife-card">
         <div class="background-card">
-          <h2>Requests</h2>
+          <h2>Upcoming Appointment</h2>
           <h3>see all</h3>
         </div>
-        <div class="inner-card">
-          <div class="name-avatar">
-            <%= image_tag "https://static.vecteezy.com/system/resources/previews/007/802/576/original/portrait-of-smiling-girl-avatar-of-woman-cartoon-character-brunette-with-square-haircut-illustration-flat-vector.jpg", class: "avatar"%>
-            <h4>mom name</h4>
+        <% if !current_user.midwife.upcoming_appointment.nil? %>
+          <div class="inner-card">
+            <div class="name-avatar">
+              <%= cl_image_tag current_user.midwife.upcoming_appointment.booking.mom.photo.key , class: "avatar"%>
+              <h4><%= current_user.midwife.upcoming_appointment.booking.mom.user.first_name %> <%= current_user.midwife.upcoming_appointment.booking.mom.user.last_name %> - <%= current_user.midwife.upcoming_appointment.title %></h4>
+            </div>
+            <div class="border"></div>
+            <div class="info-card">
+              <h5><i class="fa fa-clock"></i> <%= current_user.midwife.upcoming_appointment.start_time %> </h5>
+              <h5><i class="fa fa-location-dot"></i>  <%= current_user.midwife.upcoming_appointment.booking.mom.user.street_no %>, <%= current_user.midwife.upcoming_appointment.booking.mom.user.city_po %> </h5>
+            </div>
           </div>
-          <div class="border"></div>
-          <div class="info-card">
-            <h5><i class="fa-solid fa-clock icon"></i> date and time</h5>
-            <h5><i class="fa-solid fa-location-dot icon"></i> address link to a map?</h5>
-          </div>
-        </div>
+        <% else %>
+          <p>You have no upcoming appointment</p>
+        <% end %>
       </div>
     </div>
       <div class="container">
       <div class="outer-card" id="midwife-card">
         <div class="background-card">
-          <h2>Appointments</h2>
+          <h2>New Requests</h2>
           <h3>see all</h3>
         </div>
-        <div class="inner-card">
-          <div class="name-avatar">
-            <%= image_tag "https://static.vecteezy.com/system/resources/previews/007/802/576/original/portrait-of-smiling-girl-avatar-of-woman-cartoon-character-brunette-with-square-haircut-illustration-flat-vector.jpg", class: "avatar"%>
-            <h4>mom name</h4>
+        <% if !current_user.midwife.new_requests.nil? %>
+          <div class="inner-card">
+            <div class="name-avatar">
+              <%= cl_image_tag current_user.midwife.new_requests.mom.photo.key , class: "avatar"%>
+              <h4><%= current_user.midwife.new_requests.mom.user.first_name %> <%= current_user.midwife.new_requests.mom.user.last_name %></h4>
+            </div>
+            <div class="border"></div>
+            <div class="info-card">
+              <h5><i class="fa fa-clock"></i> Due Date: <%= current_user.midwife.new_requests.mom.due_date %> </h5>
+              <h5><i class="fa fa-location-dot"></i>  <%= current_user.midwife.new_requests.mom.user.street_no %>, <%= current_user.midwife.new_requests.mom.user.city_po %> </h5>
+              <%= link_to 'Accept', accepted_path(current_user.midwife.new_requests), data: { turbo_method: :patch} %>
+              <%= link_to 'Deny', cancelled_path(current_user.midwife.new_requests), data: { turbo_method: :patch}, class: 'text-danger' %>
+            </div>
           </div>
-          <div class="border"></div>
-          <div class="info-card">
-            <h5><i class="fa-solid fa-clock icon"></i> date and time</h5>
-            <h5><i class="fa-solid fa-location-dot icon"></i> address link to a map?</h5>
-          </div>
-        </div>
+        <% else %>
+          <p>no current requests</p>
+        <% end %>
       </div>
     </div>
     </div>

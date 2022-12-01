@@ -1,13 +1,26 @@
 <% if !current_user.is_midwife? %>
-  <% @bookings.each do |booking| %>
-      <p><%= booking.midwife.user.first_name %> <%= booking.midwife.user.last_name %></p>
+  <% if !@bookings.empty? %>
+    <% @bookings.each do |booking| %>
+        <p><%= booking.midwife.user.first_name %> <%= booking.midwife.user.last_name %></p>
+    <% end %>
+  <% else %>
+  <p>You currently have no midwife</p>
   <% end %>
 <% else %>
-  <% @bookings.each do |booking| %>
-    <%= link_to mom_path(booking.mom) do %>
-      <p><%= booking.mom.user.first_name %> <%= booking.mom.user.last_name %></p>
-      <p><i class="fa fa-map-marker "></i><%= booking.mom.user.street_no %>, <%= booking.mom.user.city_po %></p>
+  <% if !@bookings.empty? %>
+    <% @bookings.each do |booking| %>
+      <% unless booking.pending? %>
+        <%= link_to mom_path(booking.mom) do %>
+          <div class="inner-card">
+            <%= cl_image_tag booking.mom.photo.key , class: "avatar"%>
+            <h4><%= booking.mom.user.first_name %></h4>
+          </div>
+          <p><i class="fa fa-map-marker "></i><%= booking.mom.user.street_no %>, <%= booking.mom.user.city_po %></p>
+        <% end %>
+        <%= link_to "New Appointment for #{booking.mom.user.first_name}", new_booking_appointment_path(booking), class: "btn btn-primary" %>
+      <% end %>
     <% end %>
-      <%= link_to "New Appointment for #{booking.mom.user.first_name}", new_booking_appointment_path(booking), class: "btn btn-primary" %>
+  <% else %>
+    <p>You currently have no patients</p>
   <% end %>
-<% end %>
+<% end %> 
