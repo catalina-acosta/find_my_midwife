@@ -19,6 +19,18 @@ Booking.destroy_all
  mom5 = URI.open('app/assets/images/moms/mom5.jpg')
  mom6 = URI.open('app/assets/images/moms/mom6.jpg')
  mom7 = URI.open('app/assets/images/moms/mom7.jpg')
+ mom8 = URI.open('app/assets/images/moms/mom8.jpg')
+ mom9 = URI.open('app/assets/images/moms/mom9.jpg')
+ mom10 = URI.open('app/assets/images/moms/mom10.jpg')
+ mom11 = URI.open('app/assets/images/moms/mom11.jpg')
+ mom12 = URI.open('app/assets/images/moms/mom12.jpg')
+ mom13 = URI.open('app/assets/images/moms/mom13.jpg')
+ mom14 = URI.open('app/assets/images/moms/mom14.jpg')
+ mom15 = URI.open('app/assets/images/moms/mom15.jpg')
+ mom16 = URI.open('app/assets/images/moms/mom16.jpg')
+ mom17 = URI.open('app/assets/images/moms/mom17.jpg')
+ mom18 = URI.open('app/assets/images/moms/mom18.jpg')
+ mom19 = URI.open('app/assets/images/moms/mom19.jpg')
 
 # midwife photos
 midwife20 = URI.open('app/assets/images/midwives/midwife20.jpg')
@@ -29,6 +41,8 @@ midwife24 = URI.open('app/assets/images/midwives/midwife24.jpg')
 midwife25 = URI.open('app/assets/images/midwives/midwife25.jpg')
 midwife26 = URI.open('app/assets/images/midwives/midwife26.jpg')
 midwife27 = URI.open('app/assets/images/midwives/midwife27.jpg')
+midwife28 = URI.open('app/assets/images/midwives/midwife28.jpg')
+midwife29 = URI.open('app/assets/images/midwives/midwife29.jpg')
 
 # creating mom user
 user1 = User.new do |u|
