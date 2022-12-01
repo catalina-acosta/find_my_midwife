@@ -1,4 +1,11 @@
 class AppointmentsController < ApplicationController
+  before_action :set_appointment, only: [ :cancelled_appointment ]
+
+  def cancelled_appointment
+    @appointment.cancelled!
+    redirect_to calendar_path
+  end
+
   def index
     @booking = Booking.find(params[:booking_id])
     @appointments = Appointment.all
@@ -31,7 +38,11 @@ class AppointmentsController < ApplicationController
 
   private
 
+  def set_appointment
+    @appointment = Appointment.find(params[:id])
+  end
+
   def appointment_params
-    params.require(:appointment).permit(:booking_id, :title, :start_time)
+    params.require(:appointment).permit(:booking_id, :title, :start_time, :status)
   end
 end

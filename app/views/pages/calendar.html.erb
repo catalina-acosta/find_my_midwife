@@ -1,13 +1,19 @@
 <div class="container mt-5 text-center">
-  <%= month_calendar(events: @appointments) do |date, appointments| %>
+  <%= month_calendar(events: @appointments) do |date, appointment| %>
       <%= date.day %>
-    <% appointments.each do |appointment| %>
-      <div class="card-container">
-        <%= link_to mom_path(appointment.booking.mom) do %>
-          <%= appointment.title %>
-          <%= appointment.booking.mom.user.first_name %>
-        <% end %>
-      </div>
-    <% end %>
   <% end %>
+  <div class="card-container ">
+    <% @appointments.each do |appointment| %>
+      <% if appointment.confirmed? %>
+        <div>
+          <p> <%= appointment.title.capitalize %>
+          <%= link_to mom_path(appointment.booking.mom) do %>
+          with <%= appointment.booking.mom.user.first_name %> <%= appointment.booking.mom.user.last_name %></p>
+          <% end %>
+          <div><p><%= appointment.start_time.strftime("%A, %d %b %Y %l:%M %p") %></p></div>
+          <div><%= link_to 'cancel', cancelled_appointment_path(appointment.booking, appointment), data: { turbo_method: :patch}, class: 'text-danger' %></div>
+        </div>
+          <% end %>
+    <% end %>
+  </div>
 </div>
