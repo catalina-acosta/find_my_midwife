@@ -564,7 +564,7 @@ mom19.save
 # midwife
 
 midwife20 = Midwife.new do |u|
-  u.speciality = "Postnatal Care"
+  u.speciality = "Postpartum care"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
   u.photo.attach(io: midwife20, filename: 'midwife20.jpg', content_type: 'image/jpg')
@@ -573,7 +573,7 @@ midwife20.user = user20
 midwife20.save
 
 midwife21 = Midwife.new do |u|
-  u.speciality = "Postnatal Care"
+  u.speciality = "Postpartum care"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
   u.photo.attach(io: midwife21, filename: 'midwife21.jpg', content_type: 'image/jpg')
@@ -582,7 +582,7 @@ midwife21.user = user21
 midwife21.save
 
 midwife22 = Midwife.new do |u|
-  u.speciality = "Postnatal Care"
+  u.speciality = "Postpartum care"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
   u.photo.attach(io: midwife22, filename: 'midwife22.jpg', content_type: 'image/jpg')
@@ -591,7 +591,7 @@ midwife22.user = user22
 midwife22.save
 
 midwife23 = Midwife.new do |u|
-  u.speciality = "Postnatal Care"
+  u.speciality = "Postpartum care"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
   u.photo.attach(io: midwife23, filename: 'midwife23.jpg', content_type: 'image/jpg')
@@ -600,7 +600,7 @@ midwife23.user = user23
 midwife23.save
 
 midwife24 = Midwife.new do |u|
-  u.speciality = "Postnatal Care"
+  u.speciality = "Birth preparation"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
   u.photo.attach(io: midwife24, filename: 'midwife24.jpg', content_type: 'image/jpg')
@@ -609,7 +609,7 @@ midwife24.user = user24
 midwife24.save
 
 midwife25 = Midwife.new do |u|
-  u.speciality = "Postnatal Care"
+  u.speciality = "Breastfeeding"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
   u.photo.attach(io: midwife25, filename: 'midwife25.jpg', content_type: 'image/jpg')
@@ -618,7 +618,7 @@ midwife25.user = user25
 midwife25.save
 
 midwife26 = Midwife.new do |u|
-  u.speciality = "Postnatal Care"
+  u.speciality = "Breastfeeding"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
   u.photo.attach(io: midwife26, filename: 'midwife26.jpg', content_type: 'image/jpg')
@@ -627,7 +627,7 @@ midwife26.user = user26
 midwife26.save
 
 midwife27 = Midwife.new do |u|
-  u.speciality = "Postnatal Care"
+  u.speciality = "Pregnancy counseling"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
   u.photo.attach(io: midwife27, filename: 'midwife27.jpg', content_type: 'image/jpg')
@@ -636,7 +636,7 @@ midwife27.user = user27
 midwife27.save
 
 midwife28 = Midwife.new do |u|
-  u.speciality = "Postnatal Care"
+  u.speciality = "Pregnancy counseling"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
   u.photo.attach(io: midwife28, filename: 'midwife28.jpg', content_type: 'image/jpg')
@@ -645,7 +645,7 @@ midwife28.user = user28
 midwife28.save
 
 midwife29 = Midwife.new do |u|
-  u.speciality = "Postnatal Care"
+  u.speciality = "Pregnancy counseling"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
   u.photo.attach(io: midwife29, filename: 'midwife29.jpg', content_type: 'image/jpg')
@@ -654,7 +654,7 @@ midwife29.user = user29
 midwife29.save
 
 midwife30 = Midwife.new do |u|
-  u.speciality = "Postnatal Care"
+  u.speciality = "Birth preparation"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
   u.photo.attach(io: midwife30, filename: 'midwife30.jpg', content_type: 'image/jpg')
