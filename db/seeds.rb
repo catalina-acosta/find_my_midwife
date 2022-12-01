@@ -43,6 +43,7 @@ midwife26 = URI.open('app/assets/images/midwives/midwife26.jpg')
 midwife27 = URI.open('app/assets/images/midwives/midwife27.jpg')
 midwife28 = URI.open('app/assets/images/midwives/midwife28.jpg')
 midwife29 = URI.open('app/assets/images/midwives/midwife29.jpg')
+midwife30 = URI.open('app/assets/images/midwives/midwife30.jpg')
 
 # creating mom user
 user1 = User.new do |u|
