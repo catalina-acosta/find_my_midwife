@@ -1,7 +1,22 @@
 class BookingsController < ApplicationController
   before_action :set_mom, only: []
-  before_action :set_booking, only: []
+  before_action :set_booking, only: [ :accepted, :cancelled, :cancelled_user]
   before_action :set_midwife, only: [:create]
+
+  def accepted
+    @booking.confirmed!
+    redirect_to midwives_path
+  end
+
+  def cancelled
+    @booking.cancelled!
+    redirect_to midwives_path
+  end
+
+  def cancelled_user
+    @booking.cancelled!
+    redirect_to search_path
+  end
 
   def index
     if current_user.is_midwife?

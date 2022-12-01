@@ -3,6 +3,8 @@ class MidwivesController < ApplicationController
   before_action :set_midwife, only: [ :show ]
 
   def index
+    return redirect_to moms_path unless current_user.is_midwife
+
     @midwives = Midwife.all
   end
 

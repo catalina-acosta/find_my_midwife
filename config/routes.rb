@@ -8,10 +8,14 @@ Rails.application.routes.draw do
   end
 
   resources :bookings do
-    resources :appointments
+    resources :appointments, except: [:destroy]
   end
 
+  resources :appointments, only: [:destroy]
   resources :moms
   get 'search', to: 'pages#search', as: :search
   get 'calendar', to: 'pages#calendar', as: :calendar
+  patch 'bookings/:id/accepted', to: 'bookings#accepted', as: 'accepted'
+  patch 'bookings/:id/cancelled', to: 'bookings#cancelled', as: 'cancelled'
+  patch 'bookings/:id/cancelled_user', to: 'bookings#cancelled_user', as: 'cancelled_user'
 end
