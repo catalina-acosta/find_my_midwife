@@ -19,11 +19,13 @@
           <div class="inner-card">
             <div class="name-avatar">
               <%= cl_image_tag current_user.mom.upcoming_appointment.booking.midwife.photo.key , class: "avatar"%>
-              <h4><%= current_user.mom.upcoming_appointment.booking.midwife.user.first_name %> <%= current_user.mom.upcoming_appointment.booking.midwife.user.last_name %> - <%= current_user.midwife.upcoming_appointment.title %></h4>
+              <h4><%= current_user.mom.upcoming_appointment.booking.midwife.user.first_name %>
+                  <%= current_user.mom.upcoming_appointment.booking.midwife.user.last_name %> -
+                  <%= current_user.mom.upcoming_appointment.title %></h4>
             </div>
             <div class="border"></div>
             <div class="info-card">
-              <h5><i class="fa fa-clock"></i> <%= current_user.mom.upcoming_appointment.start_time %> </h5>
+              <h5><i class="fa fa-clock"></i> <%= current_user.mom.upcoming_appointment.start_time.strftime("%A, %d %b %Y %l:%M %p") %> </h5>
             </div>
           </div>
         <% else %>
@@ -41,12 +43,12 @@
           <div class="inner-card">
             <div class="name-avatar">
               <%= cl_image_tag current_user.mom.recent_booking.midwife.photo.key, class: "avatar"%>
-              <h4><%= current_user.mom.recent_booking.mom.user.first_name %> <%= current_user.mom.recent_booking.midwife.user.last_name %></h4>
+              <h4><%= current_user.mom.recent_booking.midwife.user.first_name %> <%= current_user.mom.recent_booking.midwife.user.last_name %></h4>
             </div>
             <div class="border"></div>
             <div class="info-card">
               <h5> Specialty: <%= current_user.mom.recent_booking.midwife.speciality %> </h5>
-              <h5> Experience: <%= current_user.mom.recent_booking.midwife.years_experience %></h5>
+              <h5> Experience: <%= current_user.mom.recent_booking.midwife.years_experience %> years</h5>
             </div>
           </div>
         <% else %>
@@ -56,4 +58,3 @@
     </div>
     </div>
 </div>
-
