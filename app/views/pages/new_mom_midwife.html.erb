@@ -7,7 +7,10 @@
   <% end %>
 <% else %>
   <%= simple_form_for @midwife do |f| %>
-    <%= f.input :speciality , class: 'btn btn-flat' %>
+    <%= f.label :speciality%>
+    <br>
+    <%= f.select :speciality,
+      ["Postpartum care", "Breastfeeding", "Pregnancy counseling", "Birth preparation"]%>
     <%= f.input :years_experience , class: 'btn btn-flat' %>
     <%= f.input :availability, as: :date, html5: true, class: 'btn btn-flat' %>
     <%= f.input :photo, as: :file, class: 'btn btn-flat' %>

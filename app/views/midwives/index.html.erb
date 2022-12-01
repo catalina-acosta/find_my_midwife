@@ -23,7 +23,7 @@
             </div>
             <div class="border"></div>
             <div class="info-card">
-              <h5><i class="fa fa-clock"></i> <%= current_user.midwife.upcoming_appointment.start_time %> </h5>
+              <h5><i class="fa fa-clock"></i> <%= current_user.midwife.upcoming_appointment.start_time.strftime("%A, %d %b %Y %l:%M %p") %> </h5>
               <h5><i class="fa fa-location-dot"></i>  <%= current_user.midwife.upcoming_appointment.booking.mom.user.street_no %>, <%= current_user.midwife.upcoming_appointment.booking.mom.user.city_po %> </h5>
             </div>
           </div>
@@ -33,7 +33,7 @@
       </div>
     </div>
       <div class="container">
-      <div class="outer-card" id="midwife-card">
+      <div class="outer-card mb-5" id="midwife-card">
         <div class="background-card">
           <h2>New Requests</h2>
           <h3>see all</h3>
