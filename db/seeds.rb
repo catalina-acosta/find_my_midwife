@@ -19,6 +19,18 @@ Booking.destroy_all
  mom5 = URI.open('app/assets/images/moms/mom5.jpg')
  mom6 = URI.open('app/assets/images/moms/mom6.jpg')
  mom7 = URI.open('app/assets/images/moms/mom7.jpg')
+ mom8 = URI.open('app/assets/images/moms/mom8.jpg')
+ mom9 = URI.open('app/assets/images/moms/mom9.jpg')
+ mom10 = URI.open('app/assets/images/moms/mom10.jpg')
+ mom11 = URI.open('app/assets/images/moms/mom11.jpg')
+ mom12 = URI.open('app/assets/images/moms/mom12.jpg')
+ mom13 = URI.open('app/assets/images/moms/mom13.jpg')
+ mom14 = URI.open('app/assets/images/moms/mom14.jpg')
+ mom15 = URI.open('app/assets/images/moms/mom15.jpg')
+ mom16 = URI.open('app/assets/images/moms/mom16.jpg')
+ mom17 = URI.open('app/assets/images/moms/mom17.jpg')
+ mom18 = URI.open('app/assets/images/moms/mom18.jpg')
+ mom19 = URI.open('app/assets/images/moms/mom19.jpg')
 
 # midwife photos
 midwife20 = URI.open('app/assets/images/midwives/midwife20.jpg')
@@ -29,6 +41,9 @@ midwife24 = URI.open('app/assets/images/midwives/midwife24.jpg')
 midwife25 = URI.open('app/assets/images/midwives/midwife25.jpg')
 midwife26 = URI.open('app/assets/images/midwives/midwife26.jpg')
 midwife27 = URI.open('app/assets/images/midwives/midwife27.jpg')
+midwife28 = URI.open('app/assets/images/midwives/midwife28.jpg')
+midwife29 = URI.open('app/assets/images/midwives/midwife29.jpg')
+midwife30 = URI.open('app/assets/images/midwives/midwife30.jpg')
 
 # creating mom user
 user1 = User.new do |u|
@@ -397,7 +412,7 @@ user30.save
 mom1 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Wed, 23 Nov 2022'
-  u.photo.attach(io: mom1, filename: mom1.jpg’, content_type: ‘image/jpg)
+  u.photo.attach(io: mom1, filename: 'mom1.jpg', content_type: 'image/jpg')
 end
 mom1.user = user1
 mom1.save
@@ -405,7 +420,7 @@ mom1.save
 mom2 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Thu, 24 Nov 2022'
-  u.photo.attach(io: mom2, filename: mom2.jpg’, content_type: ‘image/jpg)
+  u.photo.attach(io: mom2, filename: 'mom2.jpg', content_type: 'image/jpg')
 end
 mom2.user = user2
 mom2.save
@@ -413,7 +428,7 @@ mom2.save
 mom3 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Sat, 26 Nov 2022'
-  u.photo.attach(io: mom3, filename: mom3.jpg’, content_type: ‘image/jpg)
+  u.photo.attach(io: mom3, filename: 'mom3.jpg', content_type: 'image/jpg')
 end
 mom3.user = user3
 mom3.save
@@ -421,7 +436,7 @@ mom3.save
 mom4 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Sun, 27 Nov 2022'
-  u.photo.attach(io: mom4, filename: mom4.jpg’, content_type: ‘image/jpg)
+  u.photo.attach(io: mom4, filename: 'mom4.jpg', content_type: 'image/jpg')
 end
 mom4.user = user4
 mom4.save
@@ -429,7 +444,7 @@ mom4.save
 mom5 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Mon, 28 Nov 2022'
-  u.photo.attach(io: mom5, filename: mom5.jpg’, content_type: ‘image/jpg)
+  u.photo.attach(io: mom5, filename: 'mom5.jpg', content_type: 'image/jpg')
 end
 mom5.user = user5
 mom5.save
@@ -437,7 +452,7 @@ mom5.save
 mom6 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Tue, 29 Nov 2022'
-  u.photo.attach(io: mom6, filename: mom6.jpg’, content_type: ‘image/jpg)
+  u.photo.attach(io: mom6, filename: 'mom6.jpg', content_type: 'image/jpg')
 end
 mom6.user = user6
 mom6.save
@@ -445,7 +460,7 @@ mom6.save
 mom7 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Wed, 30 Nov 2022'
-  u.photo.attach(io: mom7, filename: mom7.jpg’, content_type: ‘image/jpg)
+  u.photo.attach(io: mom7, filename: 'mom7.jpg', content_type: 'image/jpg')
 end
 mom7.user = user7
 mom7.save
@@ -453,6 +468,7 @@ mom7.save
 mom8 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Thu, 31 Nov 2022'
+  u.photo.attach(io: mom8, filename: 'mom8.jpg', content_type: 'image/jpg')
 end
 mom8.user = user8
 mom8.save
@@ -460,6 +476,7 @@ mom8.save
 mom9 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Mon, 21 Nov 2022'
+  u.photo.attach(io: mom9, filename: 'mom9.jpg', content_type: 'image/jpg')
 end
 mom9.user = user9
 mom9.save
@@ -467,6 +484,7 @@ mom9.save
 mom10 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Sun, 20 Nov 2022'
+  u.photo.attach(io: mom10, filename: 'mom10.jpg', content_type: 'image/jpg')
 end
 mom10.user = user10
 mom10.save
@@ -474,6 +492,7 @@ mom10.save
 mom11 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Sat, 19 Nov 2022'
+  u.photo.attach(io: mom11, filename: 'mom11.jpg', content_type: 'image/jpg')
 end
 mom11.user = user11
 mom11.save
@@ -481,6 +500,7 @@ mom11.save
 mom12 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Fri, 18 Nov 2022'
+  u.photo.attach(io: mom12, filename: 'mom12.jpg', content_type: 'image/jpg')
 end
 mom12.user = user12
 mom12.save
@@ -488,6 +508,7 @@ mom12.save
 mom13 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Thu, 17 Nov 2022'
+  u.photo.attach(io: mom13, filename: 'mom13.jpg', content_type: 'image/jpg')
 end
 mom13.user = user13
 mom13.save
@@ -495,6 +516,7 @@ mom13.save
 mom14 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Wed, 16 Nov 2022'
+  u.photo.attach(io: mom14, filename: 'mom14.jpg', content_type: 'image/jpg')
 end
 mom14.user = user14
 mom14.save
@@ -502,6 +524,7 @@ mom14.save
 mom15 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Tue, 15 Nov 2022'
+  u.photo.attach(io: mom15, filename: 'mom15.jpg', content_type: 'image/jpg')
 end
 mom15.user = user15
 mom15.save
@@ -509,6 +532,7 @@ mom15.save
 mom16 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Mon, 14 Nov 2022'
+  u.photo.attach(io: mom16, filename: 'mom16.jpg', content_type: 'image/jpg')
 end
 mom16.user = user16
 mom16.save
@@ -516,6 +540,7 @@ mom16.save
 mom17 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Sun, 13 Nov 2022'
+  u.photo.attach(io: mom17, filename: 'mom17.jpg', content_type: 'image/jpg')
 end
 mom17.user = user17
 mom17.save
@@ -523,6 +548,7 @@ mom17.save
 mom18 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Sat, 12 Nov 2022'
+  u.photo.attach(io: mom18, filename: 'mom18.jpg', content_type: 'image/jpg')
 end
 mom18.user = user18
 mom18.save
@@ -530,6 +556,7 @@ mom18.save
 mom19 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Fri, 11 Nov 2022'
+  u.photo.attach(io: mom19, filename: 'mom19.jpg', content_type: 'image/jpg')
 end
 mom19.user = user19
 mom19.save
@@ -540,7 +567,7 @@ midwife20 = Midwife.new do |u|
   u.speciality = "Postnatal Care"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
-  u.photo.attach(io: midwife20, filename: midwife20.jpg’, content_type: ‘image/jpg)
+  u.photo.attach(io: midwife20, filename: 'midwife20.jpg', content_type: 'image/jpg')
 end
 midwife20.user = user20
 midwife20.save
@@ -549,7 +576,7 @@ midwife21 = Midwife.new do |u|
   u.speciality = "Postnatal Care"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
-  u.photo.attach(io: midwife21, filename: midwife21.jpg’, content_type: ‘image/jpg)
+  u.photo.attach(io: midwife21, filename: 'midwife21.jpg', content_type: 'image/jpg')
 end
 midwife21.user = user21
 midwife21.save
@@ -558,7 +585,7 @@ midwife22 = Midwife.new do |u|
   u.speciality = "Postnatal Care"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
-  u.photo.attach(io: midwife22, filename: midwife22.jpg’, content_type: ‘image/jpg)
+  u.photo.attach(io: midwife22, filename: 'midwife22.jpg', content_type: 'image/jpg')
 end
 midwife22.user = user22
 midwife22.save
@@ -567,7 +594,7 @@ midwife23 = Midwife.new do |u|
   u.speciality = "Postnatal Care"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
-  u.photo.attach(io: midwife23, filename: midwife23.jpg’, content_type: ‘image/jpg)
+  u.photo.attach(io: midwife23, filename: 'midwife23.jpg', content_type: 'image/jpg')
 end
 midwife23.user = user23
 midwife23.save
@@ -576,7 +603,7 @@ midwife24 = Midwife.new do |u|
   u.speciality = "Postnatal Care"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
-  u.photo.attach(io: midwife24, filename: midwife24.jpg’, content_type: ‘image/jpg)
+  u.photo.attach(io: midwife24, filename: 'midwife24.jpg', content_type: 'image/jpg')
 end
 midwife24.user = user24
 midwife24.save
@@ -585,7 +612,7 @@ midwife25 = Midwife.new do |u|
   u.speciality = "Postnatal Care"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
-  u.photo.attach(io: midwife25, filename: midwife25.jpg’, content_type: ‘image/jpg)
+  u.photo.attach(io: midwife25, filename: 'midwife25.jpg', content_type: 'image/jpg')
 end
 midwife25.user = user25
 midwife25.save
@@ -594,7 +621,7 @@ midwife26 = Midwife.new do |u|
   u.speciality = "Postnatal Care"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
-  u.photo.attach(io: midwife26, filename: midwife26.jpg’, content_type: ‘image/jpg)
+  u.photo.attach(io: midwife26, filename: 'midwife26.jpg', content_type: 'image/jpg')
 end
 midwife26.user = user26
 midwife26.save
@@ -603,7 +630,7 @@ midwife27 = Midwife.new do |u|
   u.speciality = "Postnatal Care"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
-  u.photo.attach(io: midwife27, filename: midwife27.jpg’, content_type: ‘image/jpg)
+  u.photo.attach(io: midwife27, filename: 'midwife27.jpg', content_type: 'image/jpg')
 end
 midwife27.user = user27
 midwife27.save
@@ -612,6 +639,7 @@ midwife28 = Midwife.new do |u|
   u.speciality = "Postnatal Care"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
+  u.photo.attach(io: midwife28, filename: 'midwife28.jpg', content_type: 'image/jpg')
 end
 midwife28.user = user28
 midwife28.save
@@ -620,6 +648,7 @@ midwife29 = Midwife.new do |u|
   u.speciality = "Postnatal Care"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
+  u.photo.attach(io: midwife29, filename: 'midwife29.jpg', content_type: 'image/jpg')
 end
 midwife29.user = user29
 midwife29.save
@@ -628,6 +657,7 @@ midwife30 = Midwife.new do |u|
   u.speciality = "Postnatal Care"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
+  u.photo.attach(io: midwife30, filename: 'midwife30.jpg', content_type: 'image/jpg')
 end
 midwife30.user = user30
 midwife30.save
