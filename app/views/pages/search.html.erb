@@ -5,12 +5,12 @@
     </div>
   <% else %>
     <% @midwives.each do |midwife| %>
-      <div class="card mt-3" style="width: 18rem;">
-        <div class="card-body ">
-          <h5 class="card-title"> <%= cl_image_tag midwife.photo.key, class: "avatar"%> <%= midwife.user.first_name %> <%= midwife.user.last_name %></h5>
+      <div class="outer-card mt-3">
+        <div class="inner-card" id="mom-card">
+          <h5 class="card-title"> <%= cl_image_tag midwife.photo.key, class: "avatar-large"%> <%= midwife.user.first_name %> <%= midwife.user.last_name %></h5>
           <p class="card-text">Speciality: <%= midwife.speciality %> </p>
           <p> Experience: <%= midwife.years_experience %> years</p>
-          <p><%= link_to 'Send Request', midwife_bookings_path(midwife),  data: {turbo_method: :post}, class: 'btn btn-primary' %><%= link_to 'View Profile', midwife_path(midwife) , class: "btn btn-primary" %></p>
+          <p><%= link_to 'Send Request', midwife_bookings_path(midwife),  data: {turbo_method: :post}, class: 'btn btn-primary' %>     <%= link_to 'View Profile', midwife_path(midwife) , class: "btn btn-primary" %></p>
         </div>
       </div>
     <% end %>
