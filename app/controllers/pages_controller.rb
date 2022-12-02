@@ -23,7 +23,7 @@ class PagesController < ApplicationController
   end
 
   def search
-    @midwives = Midwife.all
+    @midwives = Midwife.excluding( current_user.mom.midwives )
   end
 
   private

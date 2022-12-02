@@ -3,6 +3,7 @@ class Mom < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_one_attached :photo
   has_many :appointments, through: :bookings
+  has_many :midwives, through: :bookings
 
   def recent_booking
     bookings.where("status = 1").first
