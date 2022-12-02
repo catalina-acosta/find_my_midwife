@@ -1,9 +1,13 @@
-Moms Profile
-.mom last_name
-.mom address
-
-
-.mom next_appointment
-
-
-Notes at the bottom
+<div class="container">
+  <div class="outer-card align-items-center">
+    <div class="inner-card" id="midwife-card">
+      <div class="d-flex align-items-center">
+      <h2><%= @mom.user.first_name %> <%= @mom.user.last_name %></h2>
+      <%= cl_image_tag @mom.photo.key, class: "avatar-large"%>
+      </div>
+      <p><i class="fa fa-solid fa-baby"></i>Due date: <%= @mom.due_date%></p>
+      <p><i class="fa fa-location-dot"></i>Location: <%= @mom.user.city_po%></p>
+      <%= link_to 'Back', calendar_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
