@@ -4,14 +4,15 @@
       <p>There are no midwives currently available</p>
     </div>
   <% else %>
-    <div class="card" style="width: 18rem;">
-      <% @midwives.each do |midwife| %>
-        <div class="card-body">
-          <h5 class="card-title"><%= midwife.user.first_name %> <%= midwife.user.last_name %></h5>
-          <p class="card-text">Speciality: <%= midwife.speciality %> <%= midwife.years_experience %></p>
+    <% @midwives.each do |midwife| %>
+      <div class="card mt-3" style="width: 18rem;">
+        <div class="card-body ">
+          <h5 class="card-title"> <%= cl_image_tag midwife.photo.key, class: "avatar"%> <%= midwife.user.first_name %> <%= midwife.user.last_name %></h5>
+          <p class="card-text">Speciality: <%= midwife.speciality %> </p>
+          <p> Experience: <%= midwife.years_experience %> years</p>
           <%= link_to 'View Profile', midwife_path(midwife) , class: "btn btn-primary" %>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
