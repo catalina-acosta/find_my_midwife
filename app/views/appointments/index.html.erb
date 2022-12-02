@@ -3,14 +3,13 @@
       <%= date.day %>
   <% end %>
   <div class="card-container">
-    <div class="inner-card align-items-center " id="midwife-card">
+    <div class="inner-card align-items-center " id="mom-card">
       <% @appointments.each do |appointment| %>
           <% if appointment.confirmed? %>
           <div>
-            <h3><%= appointment.booking.mom.user.first_name %> <%= appointment.booking.mom.user.last_name %></h3>
+            <h3><%= appointment.booking.midwife.user.first_name %> <%= appointment.booking.midwife.user.last_name %></h3>
             <p> <%= appointment.title.capitalize %>
             <div><p><%= appointment.start_time.strftime("%A, %d %b %Y %l:%M %p") %></p></div>
-            <div><%= link_to 'cancel', cancelled_appointment_path(appointment.booking, appointment), data: { turbo_method: :patch}, class: 'text-danger' %></div>
           </div>
           <% end %>
       <% end %>

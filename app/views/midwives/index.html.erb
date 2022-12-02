@@ -46,7 +46,7 @@
             </div>
             <div class="border"></div>
             <div class="info-card">
-              <h5><i class="fa fa-clock"></i> Due Date: <%= current_user.midwife.new_requests.mom.due_date %> </h5>
+              <h5><i class="fa fa-solid fa-baby"></i> Due Date: <%= current_user.midwife.new_requests.mom.due_date %> </h5>
               <h5><i class="fa fa-location-dot"></i>  <%= current_user.midwife.new_requests.mom.user.street_no %>, <%= current_user.midwife.new_requests.mom.user.city_po %> </h5>
               <%= link_to 'Accept', accepted_path(current_user.midwife.new_requests), data: { turbo_method: :patch} %>
               <%= link_to 'Deny', cancelled_path(current_user.midwife.new_requests), data: { turbo_method: :patch}, class: 'text-danger' %>

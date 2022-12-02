@@ -44,7 +44,6 @@
           <% @bookings.each do |booking| %>
             <% unless booking.pending? %>
               <div class="inner-card">
-                <%= link_to mom_path(booking.midwife) do %>
                   <div class="name-avatar">
                     <%= cl_image_tag booking.midwife.photo.key , class: "avatar"%>
                     <h4><%= booking.midwife.user.first_name %></h4>
@@ -54,10 +53,11 @@
                     <p><i class="fa-solid fa-star"></i>Speciality: <%=  booking.midwife.speciality %></p>
                     <p><i class="fa fa-clock"></i> Appointments:
                     <% booking.appointments.each do |appointment| %>
+                      <% unless appointment.cancelled? %>
                       <p><%= appointment.title %> <%= appointment.start_time.strftime(("%A, %d %b %Y %l:%M %p") ) %></p>
                       <%= link_to "View Appointment for #{booking.midwife.user.first_name} #{booking.midwife.user.last_name}", booking_appointments_path(booking), class: "btn btn-primary" %>
+                      <% end %>
                     <% end %></p>
-                <% end %>
               </div>
             <% end %>
           <% end %>
@@ -71,7 +71,7 @@
                 </div>
                 <%= link_to 'Home', midwives_path, class: "btn btn-primary" %>
             </div>
-           </div>
+          </div>
         <% end %>
   <% end %>
 </div>
