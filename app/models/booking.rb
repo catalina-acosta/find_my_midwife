@@ -8,4 +8,5 @@ class Booking < ApplicationRecord
     confirmed: 1,
     cancelled: 2
   }
+
 end
