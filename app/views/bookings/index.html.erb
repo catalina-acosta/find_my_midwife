@@ -1,34 +1,77 @@
 <div>
+  <% if current_user.is_midwife? %>
     <div class="container">
       <div class="outer-card mb-5" id="midwife-card">
         <div class="background-card">
           <h2>Bookings</h2>
         </div>
-      <% if !@bookings.empty? %>
-        <div class="inner-card">
-          <div class="name-avatar">
-            <% @bookings.each do |booking| %>
-              <% unless booking.pending? %>
+        <% if !@bookings.empty? %>
+          <% @bookings.each do |booking| %>
+            <% unless booking.pending? %>
+              <div class="inner-card">
                 <%= link_to mom_path(booking.mom) do %>
-                  <div class="inner-card">
+                  <div class="name-avatar">
                     <%= cl_image_tag booking.mom.photo.key , class: "avatar"%>
                     <h4><%= booking.mom.user.first_name %></h4>
-                      <div class="border"></div>
                   </div>
-                  </div>
+                    <div class="border"></div>
                   <div class="info-card">
-                  <p><i class="fa-solid fa-baby"></i><%=  booking.mom.due_date %></p>
-                  <p><i class="fa fa-map-marker "></i><%=  booking.mom.user.street_no %>, <%= booking.mom.user.city_po %></p>
+                    <p><i class="fa-solid fa-baby"></i><%=  booking.mom.due_date %></p>
+                    <p><i class="fa fa-map-marker "></i><%=  booking.mom.user.street_no %>, <%= booking.mom.user.city_po %></p>
+                  </div>
                 <% end %>
-                </div>
-                </div>
                 <%= link_to "New Appointment for #{booking.mom.user.first_name}", new_booking_appointment_path(booking), class: "btn btn-primary" %>
-              <% end %>
+              </div>
             <% end %>
-          <% else %>
-            <p>You currently have no patients</p>
           <% end %>
-          </div>
-        </div>
+      </div>
     </div>
+        <% else %>
+          <div class="container">
+            <div class="outer-card mb-5" id="midwife-card">
+                <p>You currently have no patients</p>
+                <%= link_to 'Home', midwives_path, class: "btn btn-primary" %>
+            </div>
+          </div>
+        <% end %>
+  <% else %>
+    <div class="container">
+      <div class="outer-card mb-5" id="mom-card">
+        <div class="background-card">
+          <h2>Appointments</h2>
+        </div>
+        <% if !@bookings.empty? %>
+          <% @bookings.each do |booking| %>
+            <% unless booking.pending? %>
+              <div class="inner-card">
+                <%= link_to mom_path(booking.midwife) do %>
+                  <div class="name-avatar">
+                    <%= cl_image_tag booking.midwife.photo.key , class: "avatar"%>
+                    <h4><%= booking.midwife.user.first_name %></h4>
+                  </div>
+                    <div class="border"></div>
+                  <div class="info-card">
+                    <p><i class="fa-solid fa-star"></i>Speciality: <%=  booking.midwife.speciality %></p>
+                    <p><i class="fa fa-clock"></i> Appointments:
+                    <% booking.appointments.each do |appointment| %>
+                      <p><%= appointment.title %> <%= appointment.start_time.strftime(("%A, %d %b %Y %l:%M %p") ) %></p>
+                      <%= link_to "View Appointment for #{booking.midwife.user.first_name} #{booking.midwife.user.last_name}", booking_appointments_path(booking), class: "btn btn-primary" %>
+                    <% end %></p>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+      </div>
+    </div>
+        <% else %>
+          <div class="container">
+            <div class="outer-card mb-5" id="mom-card">
+                <div class="inner-card">
+                    <p>You currently have no midwife</p>
+                </div>
+                <%= link_to 'Home', midwives_path, class: "btn btn-primary" %>
+            </div>
+           </div>
+        <% end %>
+  <% end %>
 </div>

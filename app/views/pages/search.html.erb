@@ -5,14 +5,18 @@
     </div>
   <% else %>
     <% @midwives.each do |midwife| %>
-      <div class="card mt-3" style="width: 18rem;">
-        <div class="card-body ">
-          <h5 class="card-title"> <%= cl_image_tag midwife.photo.key, class: "avatar"%> <%= midwife.user.first_name %> <%= midwife.user.last_name %></h5>
-          <p class="card-text">Speciality: <%= midwife.speciality %> </p>
-          <p> Experience: <%= midwife.years_experience %> years</p>
-          <%= link_to 'View Profile', midwife_path(midwife) , class: "btn btn-primary" %>
-        </div>
-      </div>
+      <% current_user.mom.bookings.each do |booking| %>
+        <% unless booking.midwife == midwife %>
+          <div class="card mt-3" style="width: 18rem;">
+            <div class="card-body ">
+              <h5 class="card-title"> <%= cl_image_tag midwife.photo.key, class: "avatar"%> <%= midwife.user.first_name %> <%= midwife.user.last_name %></h5>
+              <p class="card-text">Speciality: <%= midwife.speciality %> </p>
+              <p> Experience: <%= midwife.years_experience %> years</p>
+              <p><%= link_to 'Send Request', midwife_bookings_path(midwife),  data: {turbo_method: :post}, class: 'btn btn-primary' %><%= link_to 'View Profile', midwife_path(midwife) , class: "btn btn-primary" %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
     <% end %>
   <% end %>
 </div>

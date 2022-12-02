@@ -37,7 +37,7 @@ class BookingsController < ApplicationController
     @booking.mom = current_user.mom
     @booking.midwife = @midwife
     if @booking.save!
-      redirect_to bookings_path
+      redirect_to search_path
     else
       render 'midwives/show'
     end
