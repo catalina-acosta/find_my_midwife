@@ -10,7 +10,9 @@
           <%= link_to midwives_path do %>
         <i class="fa-solid fa-house"></i>
           <% end %>
-        <i class="fa-solid fa-comment"></i>
+        <%= link_to chatrooms_path do %>
+          <i class="fa-solid fa-comment"></i>
+        <% end %>
         <div class="dropup">
           <i class="fa-solid fa-gear" data-bs-toggle="dropdown" aria-expanded="false"></i>
           <ul class="dropdown-menu">
@@ -29,7 +31,9 @@
         <%= link_to moms_path do %>
           <i class="fa-solid fa-house"></i>
         <% end %>
-        <i class="fa-solid fa-comment"></i>
+        <%= link_to chatrooms_path do %>
+          <i class="fa-solid fa-comment"></i>
+        <% end %>
         <div class="dropup">
           <i class="fa-solid fa-gear" data-bs-toggle="dropdown" aria-expanded="false"></i>
           <ul class="dropdown-menu">
