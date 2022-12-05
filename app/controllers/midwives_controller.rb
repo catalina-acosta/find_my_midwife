@@ -5,7 +5,15 @@ class MidwivesController < ApplicationController
   def index
     return redirect_to moms_path unless current_user.is_midwife
 
-    @midwives = Midwife.all
+    if current_user.midwife.upcoming_appointment
+      @mom_user = current_user.midwife.upcoming_appointment.booking.mom.user
+      @markers = [
+        {
+          lat: @mom_user.latitude,
+          lng: @mom_user.longitude
+        }
+      ]
+    end
   end
 
   def show; end

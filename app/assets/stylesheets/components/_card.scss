@@ -32,6 +32,16 @@
   gap: 8px;
 }
 
+.inner-card-map-index{
+  display: flex;
+  background-color: #F6F8F8;
+  border-radius: 10px;
+  align-items:flex-start;
+  justify-content: flex-start;
+  padding: 16px 8px;
+  gap: 8px;
+}
+
 .info-card{
   display: flex;
   flex-direction: column;
