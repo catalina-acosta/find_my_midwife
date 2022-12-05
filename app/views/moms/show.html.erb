@@ -8,45 +8,49 @@
       <p><i class="fa fa-solid fa-baby"></i>Due date: <%= @mom.due_date%></p>
       <p><i class="fa fa-location-dot"></i>Location: <%= @mom.user.address%></p>
       <%= link_to 'Back', calendar_path, class: 'btn btn-primary' %>
-      <%= simple_form_for([@mom, @note]) do |f| %>
-        <%= f.input :content, label: 'Notes', placeholder: 'Add your notes here!' %>
-        <%= f.submit class: "btn btn-primary" %>
-      <% end %>
-      <% @mom.notes.each do |note| %>
-        <div>
-        <p><%= note.content %></p>
-
-        <!-- Button trigger modal -->
-        
-        <div>
-          <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#noteModal<%= note.id %>">
-            <i class="fa-regular fa-pen-to-square"></i>
-          </button>
-          <%= link_to note_path(note), data: {turbo_method: :delete, confirm: "Are you sure you want to remove this note?"} do %>
-          <i class="fa-regular fa-trash-can"></i>
+      <% current_user.midwife.bookings.each do |booking| %>
+        <% if @mom == booking.mom && booking.confirmed? %>
+          <%= simple_form_for([@mom, @note]) do |f| %>
+            <%= f.input :content, label: 'Notes', placeholder: 'Add your notes here!' %>
+            <%= f.submit class: "btn btn-primary" %>
           <% end %>
-        </div>
-        </div>
+          <% @mom.notes.each do |note| %>
+           <div>
+            <p><%= note.content %></p>
 
-        <!-- Modal -->
-        <div class="modal fade" id="noteModal<%= note.id %>" tabindex="-1" aria-labelledby="noteModalLabel<%= note.id %>" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Note</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <%= simple_form_for(note) do |f| %>
-                  <%= f.input :content, label: 'Notes', placeholder: 'Add your notes here!' %>
-                  <%= f.submit class: "btn btn-outline-info" %>
-                <% end %>
+            <!-- Button trigger modal -->
+
+            <div>
+              <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#noteModal<%= note.id %>">
+                <i class="fa-regular fa-pen-to-square"></i>
+              </button>
+              <%= link_to note_path(note), data: {turbo_method: :delete, confirm: "Are you sure you want to remove this note?"} do %>
+              <i class="fa-regular fa-trash-can"></i>
+              <% end %>
+            </div>
+           </div>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="noteModal<%= note.id %>" tabindex="-1" aria-labelledby="noteModalLabel<%= note.id %>" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Note</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <%= simple_form_for(note) do |f| %>
+                      <%= f.input :content, label: 'Notes', placeholder: 'Add your notes here!' %>
+                      <%= f.submit class: "btn btn-outline-info" %>
+                    <% end %>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          <% end %>
+        <% end %>
       <% end %>
-
     </div>
   </div>
 </div>

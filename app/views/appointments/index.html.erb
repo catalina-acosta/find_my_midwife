@@ -4,6 +4,7 @@
   <% end %>
   <div class="card-container">
     <div class="inner-card align-items-center " id="midwife-card">
+
       <% @appointments.each do |appointment| %>
           <% if appointment.confirmed? %>
           <div class="outer-card">

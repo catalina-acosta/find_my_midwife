@@ -14,7 +14,8 @@
         <div class="dropup">
           <i class="fa-solid fa-gear" data-bs-toggle="dropdown" aria-expanded="false"></i>
           <ul class="dropdown-menu">
-            <%= button_to "Log out", destroy_user_session_path, method: :delete, data: {turbo: false}%>
+            <li><%= button_to "Log out", destroy_user_session_path, method: :delete, data: {turbo: false}%></li>
+            <li><%= button_to 'Profile', midwife_path(current_user.midwife), method: :get, data: {turbo: false} %></li>
           </ul>
         </div>
       </div>
@@ -34,6 +35,7 @@
           <i class="fa-solid fa-gear" data-bs-toggle="dropdown" aria-expanded="false"></i>
           <ul class="dropdown-menu">
             <%= button_to "Log out", destroy_user_session_path, method: :delete, data: {turbo: false}%>
+            <%= link_to 'Profile,', mom_path(current_user.mom) %>
           </ul>
         </div>
       </div>
