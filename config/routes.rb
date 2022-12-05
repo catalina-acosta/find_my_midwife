@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :bookings do
     resources :appointments, except: [:destroy]
+    resources :messages, only: :create  
   end
 
   resources :appointments, only: [:destroy]
