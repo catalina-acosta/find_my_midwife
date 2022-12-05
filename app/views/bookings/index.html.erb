@@ -20,6 +20,7 @@
                     <p><i class="fa fa-map-marker "></i><%=  booking.mom.user.street_no %>, <%= booking.mom.user.city_po %></p>
                   </div>
                 <% end %>
+                <%= link_to "New message", booking_path(booking), class: "btn btn-primary" %>
                 <%= link_to "New Appointment for #{booking.mom.user.first_name}", new_booking_appointment_path(booking), class: "btn btn-primary" %>
               </div>
             <% end %>
@@ -47,6 +48,7 @@
                   <div class="name-avatar">
                     <%= cl_image_tag booking.midwife.photo.key , class: "avatar"%>
                     <h4><%= booking.midwife.user.first_name %></h4>
+                    <%= link_to "New message", booking_path(booking), class: "btn btn-primary" %>
                   </div>
                     <div class="border"></div>
                   <div class="info-card">

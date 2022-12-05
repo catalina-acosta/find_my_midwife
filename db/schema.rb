@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_12_05_084206) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -60,6 +61,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_084206) do
     t.datetime "updated_at", null: false
     t.index ["midwife_id"], name: "index_bookings_on_midwife_id"
     t.index ["mom_id"], name: "index_bookings_on_mom_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.bigint "booking_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_messages_on_booking_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "midwives", force: :cascade do |t|
@@ -113,6 +124,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_084206) do
   add_foreign_key "appointments", "bookings"
   add_foreign_key "bookings", "midwives"
   add_foreign_key "bookings", "moms"
+  add_foreign_key "messages", "bookings"
+  add_foreign_key "messages", "users"
   add_foreign_key "midwives", "users"
   add_foreign_key "moms", "users"
   add_foreign_key "notes", "moms"

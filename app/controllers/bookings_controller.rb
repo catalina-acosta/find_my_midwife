@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_mom, only: []
-  before_action :set_booking, only: [ :accepted, :cancelled, :cancelled_user]
+  before_action :set_booking, only: [ :accepted, :cancelled, :cancelled_user, :show]
   before_action :set_midwife, only: [:create]
 
   def accepted
@@ -26,7 +26,10 @@ class BookingsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @boooking = Booking.find(params[:id])
+    @message = Message.new
+  end
 
   def new
     @booking = Booking.new

@@ -23,7 +23,8 @@ class PagesController < ApplicationController
   end
 
   def search
-    @midwives = Midwife.excluding( current_user.mom.midwives )
+    @midwives = Midwife.excluding(current_user.mom.midwives)
+    @midwives = @midwives.where(speciality: params[:selected_specialities]) if params[:selected_specialities].present?
   end
 
   private

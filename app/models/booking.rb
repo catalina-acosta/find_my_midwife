@@ -2,6 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :mom
   belongs_to :midwife
   has_many :appointments, dependent: :destroy
+  has_many :messages
 
   enum status: {
     pending: 0,
