@@ -21,7 +21,7 @@
           <div class="inner-card">
               <div class="name-avatar">
                 <%= cl_image_tag current_user.midwife.upcoming_appointment.booking.mom.photo.key , class: "avatar"%>
-                <h4><%= current_user.midwife.upcoming_appointment.booking.mom.user.first_name %> <%= current_user.midwife.upcoming_appointment.booking.mom.user.last_name %> - <%= current_user.midwife.upcoming_appointment.title %></h4>
+                <h4><%= current_user.midwife.upcoming_appointment.booking.mom.user.first_name %> <%= current_user.midwife.upcoming_appointment.booking.mom.user.last_name %>: <%= current_user.midwife.upcoming_appointment.title %></h4>
               </div>
               <div class="border"></div>
               <div class="info-card">

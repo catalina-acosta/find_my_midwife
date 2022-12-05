@@ -1,19 +1,26 @@
 <div class="container">
   <div class="outer-card align-items-center">
+  <% if current_user.is_midwife? %>
+    <div class="inner-card" id="midwife-card">
+  <% else %>
     <div class="inner-card" id="mom-card">
+  <% end %>
       <div class="d-flex align-items-center">
-      <h2><%= @midwife.user.first_name %><%= @midwife.user.last_name %></h2>
+      <h2><%= @midwife.user.first_name %> <%= @midwife.user.last_name %></h2>
       <%= cl_image_tag @midwife.photo.key, class: "avatar-large"%>
       </div>
+      <div class="inner-card">
+      <% if current_user.midwife = @midwife %>
+        <p>Address: <%= @midwife.user.address %></p>
+      <% end %>
       <p>Available from: <%= @midwife.availability.strftime("%d/%m/%Y")%></p>
       <p> <%= @midwife.years_experience %> Years working in: <%= @midwife.speciality%></p>
+      </div>
 
       <% if current_user.is_midwife && current_user.midwife = @midwife %>
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#profile">
               Edit Profile
             </button>
-
-            link_to
 
             <!-- Modal -->
             <div class="modal fade" id="profile" tabindex="-1" aria-labelledby="noteModalLabel" aria-hidden="true">
