@@ -1,6 +1,7 @@
 class Mom < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
+  has_many :notes, dependent: :destroy
   has_one_attached :photo
   has_many :appointments, through: :bookings
   has_many :midwives, through: :bookings
