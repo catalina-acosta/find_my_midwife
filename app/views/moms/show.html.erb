@@ -10,18 +10,22 @@
       <%= link_to 'Back', calendar_path, class: 'btn btn-primary' %>
       <%= simple_form_for([@mom, @note]) do |f| %>
         <%= f.input :content, label: 'Notes', placeholder: 'Add your notes here!' %>
-        <%= f.submit class: "btn btn-outline-info" %>
+        <%= f.submit class: "btn btn-primary" %>
       <% end %>
       <% @mom.notes.each do |note| %>
+        <div>
         <p><%= note.content %></p>
 
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#noteModal<%= note.id %>">
-          Edit
-        </button>
-
-        link_to 
-
+        <div>
+          <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#noteModal<%= note.id %>">
+            <i class="fa-regular fa-pen-to-square"></i>
+          </button>
+          <%= link_to note_path(note), data: {turbo_method: :delete, confirm: "Are you sure you want to remove this note?"} do %>
+          <i class="fa-regular fa-trash-can"></i>
+          <% end %>
+        </div>
+        </div>
         <!-- Modal -->
         <div class="modal fade" id="noteModal<%= note.id %>" tabindex="-1" aria-labelledby="noteModalLabel<%= note.id %>" aria-hidden="true">
           <div class="modal-dialog">

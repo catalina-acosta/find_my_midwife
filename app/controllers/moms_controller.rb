@@ -1,5 +1,5 @@
 class MomsController < ApplicationController
-  before_action :set_mom, only: [ :show ]
+  before_action :set_mom, only: [:show]
   before_action :set_bookmark, only: []
 
   def index
