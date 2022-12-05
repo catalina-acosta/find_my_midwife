@@ -13,7 +13,9 @@
       <div class="outer-card mb-5" id="midwife-card">
         <div class="background-card">
           <h2>Upcoming Appointment</h2>
-          <h3>see all</h3>
+          <%= link_to booking_appointments_path(current_user.midwife.upcoming_appointment.booking) do %>
+            <h3>see all</h3>
+          <% end %>
         </div>
         <% if !current_user.midwife.upcoming_appointment.nil? %>
           <div class="inner-card">
