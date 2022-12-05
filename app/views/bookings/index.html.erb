@@ -17,7 +17,7 @@
                     <div class="border"></div>
                   <div class="info-card">
                     <p><i class="fa-solid fa-baby"></i><%=  booking.mom.due_date %></p>
-                    <p><i class="fa fa-map-marker "></i><%=  booking.mom.user.street_no %>, <%= booking.mom.user.city_po %></p>
+                    <p><i class="fa fa-map-marker "></i><%=  booking.mom.user.address %></p>
                   </div>
                 <% end %>
                 <%= link_to "New message", booking_path(booking), class: "btn btn-primary" %>

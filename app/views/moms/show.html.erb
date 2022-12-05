@@ -6,7 +6,7 @@
       <%= cl_image_tag @mom.photo.key, class: "avatar-large"%>
       </div>
       <p><i class="fa fa-solid fa-baby"></i>Due date: <%= @mom.due_date%></p>
-      <p><i class="fa fa-location-dot"></i>Location: <%= @mom.user.city_po%></p>
+      <p><i class="fa fa-location-dot"></i>Location: <%= @mom.user.address%></p>
       <%= link_to 'Back', calendar_path, class: 'btn btn-primary' %>
       <%= simple_form_for([@mom, @note]) do |f| %>
         <%= f.input :content, label: 'Notes', placeholder: 'Add your notes here!' %>
@@ -20,7 +20,7 @@
           Edit
         </button>
 
-        link_to 
+        link_to
 
         <!-- Modal -->
         <div class="modal fade" id="noteModal<%= note.id %>" tabindex="-1" aria-labelledby="noteModalLabel<%= note.id %>" aria-hidden="true">
