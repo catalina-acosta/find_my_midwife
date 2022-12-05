@@ -648,10 +648,17 @@ booking2.midwife = midwife20
 booking2.mom = mom2
 booking2.save
 
+booking3 = Booking.new do |u|
+  u.status = 1
+end
+booking3.midwife = midwife20
+booking3.mom = mom3
+booking3.save
+
 # appointments
 
 appointment1 = Appointment.new do |u|
-  u.title = "Get to know"
+  u.title = "Get-to-know"
   u.status = "confirmed"
   u.start_time = "Wed, 07 Dec 2022 18:49:08.045702000 CET +01:00"
 end
@@ -659,11 +666,26 @@ appointment1.booking = booking2
 appointment1.save
 
 appointment2 = Appointment.new do |u|
-  u.title = "Check-up"
+  u.title = "Weekly-check-up"
   u.status = "confirmed"
-  u.start_time = "Fri, 09 Dec 2022 12:00:00.045702000 CET +01:00"
+  u.start_time = "Fri, 09 Dec 2022 18:00:00.045702000 CET +01:00"
 end
-appointment2.booking = booking2
+appointment2.booking = booking3
 appointment2.save
 
+appointment3 = Appointment.new do |u|
+  u.title = "Weekly-check-up"
+  u.status = "confirmed"
+  u.start_time = "Fri, 16 Dec 2022 18:00:00.045702000 CET +01:00"
+end
+appointment3.booking = booking3
+appointment3.save
+
+appointment4 = Appointment.new do |u|
+  u.title = "Weekly-Check-up"
+  u.status = "confirmed"
+  u.start_time = "Fri, 23 Dec 2022 16:00:00.045702000 CET +01:00"
+end
+appointment4.booking = booking3
+appointment4.save
 puts "done"

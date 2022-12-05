@@ -7,7 +7,7 @@
       </div>
       <p><i class="fa fa-solid fa-baby"></i>Due date: <%= @mom.due_date%></p>
       <p><i class="fa fa-location-dot"></i>Location: <%= @mom.user.address%></p>
-      <%= link_to 'Back', calendar_path, class: 'btn btn-primary' %>
+      <%= link_to 'Back', bookings_path, class: 'btn btn-primary' %>
       <% current_user.midwife.bookings.each do |booking| %>
         <% if @mom == booking.mom && booking.confirmed? %>
           <%= simple_form_for([@mom, @note]) do |f| %>

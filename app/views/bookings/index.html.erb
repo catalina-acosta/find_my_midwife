@@ -9,7 +9,7 @@
           <% @bookings.each do |booking| %>
             <% unless booking.pending? %>
               <div class="inner-card">
-                <%= link_to mom_path(booking.mom) do %>
+                <%= link_to mom_path(booking.mom), class: "text-decoration-none text-dark" do %>
                   <div class="name-avatar">
                     <%= cl_image_tag booking.mom.photo.key , class: "avatar"%>
                     <h4><%= booking.mom.user.first_name %></h4>
