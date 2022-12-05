@@ -11,4 +11,6 @@ class Midwife < ApplicationRecord
   def new_requests
     bookings.where("status = 0").first unless !bookings.where("status = 0").exists?
   end
+
+  SPECIALITIES = ["Postpartum care", "Breastfeeding", "Pregnancy counseling", "Birth preparation"]
 end
