@@ -6,7 +6,9 @@ class MomsController < ApplicationController
     return redirect_to midwives_path if current_user.is_midwife
   end
 
-  def show; end
+  def show
+    @note = Note.new
+  end
 
   def new
     @mom = Mom.new

@@ -13,7 +13,12 @@ Rails.application.routes.draw do
   end
 
   resources :appointments, only: [:destroy]
-  resources :moms
+  resources :moms do
+    resources :notes, only: [:new, :create]
+  end
+
+  resources :notes, only: [:edit, :update]
+
   get 'search', to: 'pages#search', as: :search
   get 'calendar', to: 'pages#calendar', as: :calendar
   patch 'bookings/:id/accepted', to: 'bookings#accepted', as: 'accepted'
