@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_action :set_appointment, only: [ :cancelled_appointment ]
+  before_action :set_appointment, only: [ :cancelled_appointment, :destroy ]
 
   def cancelled_appointment
     @appointment.cancelled!
@@ -33,7 +33,7 @@ class AppointmentsController < ApplicationController
 
   def destroy
     @appointment.destroy
-    redirect_to root_path
+    redirect_to calendar_path
   end
 
   private
