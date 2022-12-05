@@ -10,6 +10,7 @@ puts 'Moms have to take care of children..'
 Mom.destroy_all
 puts 'Bookings were illegible..'
 Booking.destroy_all
+puts "Appointments delayed due to: Act of God"
 
 # mom photo
  mom1 = URI.open('app/assets/images/moms/mom1.jpg')
@@ -646,5 +647,23 @@ end
 booking2.midwife = midwife20
 booking2.mom = mom2
 booking2.save
+
+# appointments
+
+appointment1 = Appointment.new do |u|
+  u.title = "Get to know"
+  u.status = "confirmed"
+  u.start_time = "Wed, 07 Dec 2022 18:49:08.045702000 CET +01:00"
+end
+appointment1.booking = booking2
+appointment1.save
+
+appointment2 = Appointment.new do |u|
+  u.title = "Check-up"
+  u.status = "confirmed"
+  u.start_time = "Fri, 09 Dec 2022 12:00:00.045702000 CET +01:00"
+end
+appointment2.booking = booking2
+appointment2.save
 
 puts "done"
