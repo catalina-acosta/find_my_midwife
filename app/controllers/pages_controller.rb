@@ -27,6 +27,10 @@ class PagesController < ApplicationController
     @midwives = @midwives.where(speciality: params[:selected_specialities]) if params[:selected_specialities].present?
   end
 
+  def chatroom
+    
+  end
+
   private
 
   def set_mom

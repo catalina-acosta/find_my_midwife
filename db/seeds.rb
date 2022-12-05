@@ -10,6 +10,7 @@ puts 'Moms have to take care of children..'
 Mom.destroy_all
 puts 'Bookings were illegible..'
 Booking.destroy_all
+puts "Appointments delayed due to: Act of God"
 
 # mom photo
  mom1 = URI.open('app/assets/images/moms/mom1.jpg')
@@ -49,8 +50,7 @@ midwife30 = URI.open('app/assets/images/midwives/midwife30.jpg')
 user1 = User.new do |u|
   u.first_name = "Jessica"
   u.last_name = "Miebach"
-  u.street_no = "Koppelweg 87"
-  u.city_po = "Berlin, 12347"
+  u.address = "Koppelweg 87, Berlin"
   u.email = "jessica.mie@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -61,8 +61,7 @@ user1.save
 user2 = User.new do |u|
   u.first_name = "Lisa"
   u.last_name = "Wrangler"
-  u.street_no = "Weichselstraße 31"
-  u.city_po = "Berlin, 10247"
+  u.address = "Weichselstraße 31, Berlin"
   u.email = "lisa.wrangler@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -73,8 +72,7 @@ user2.save
 user3 = User.new do |u|
   u.first_name = "Anne-Marie"
   u.last_name = "Mayer"
-  u.street_no = "Schönhauser Straße 49"
-  u.city_po = "Berlin, 13158"
+  u.address = "Schönhauser Straße 49, Berlin"
   u.email = "annemarie@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -85,8 +83,7 @@ user3.save
 user4 = User.new do |u|
   u.first_name = "Ute"
   u.last_name = "Wolff"
-  u.street_no = "Stephanstraße 46"
-  u.city_po = "Berlin, 10559"
+  u.address = "Stephanstraße 46, Berlin"
   u.email = "u.wolff@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -97,8 +94,7 @@ user4.save
 user5 = User.new do |u|
   u.first_name = "Kristin"
   u.last_name = "Schulze"
-  u.street_no = "Frankfurter Allee 198"
-  u.city_po = "Berlin, 10365"
+  u.address = "Frankfurter Allee 198, Berlin"
   u.email = "krissy92@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -109,8 +105,7 @@ user5.save
 user6 = User.new do |u|
   u.first_name = "Laura"
   u.last_name = "Arnold"
-  u.street_no = "Regensburger Straße 30a"
-  u.city_po = "Berlin, 10777"
+  u.address = "Regensburger Straße 30a, Berlin"
   u.email = "l.arnold@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -121,8 +116,7 @@ user6.save
 user7 = User.new do |u|
   u.first_name = "Lea"
   u.last_name = "Hahn"
-  u.street_no = "Weichselstraße 31"
-  u.city_po = "Berlin, 10247"
+  u.address = "Weichselstraße 31, Berlin"
   u.email = "leahahn@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -133,8 +127,7 @@ user7.save
 user8 = User.new do |u|
   u.first_name = "Andrea"
   u.last_name = "Schmid"
-  u.street_no = "Hackländerweg 27A"
-  u.city_po = "Berlin, 14089"
+  u.address = "Hackländerweg 27A, Berlin"
   u.email = "andrea.s@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -145,8 +138,7 @@ user8.save
 user9 = User.new do |u|
   u.first_name = "Yvonne"
   u.last_name = "Pfeiffer"
-  u.street_no = "Leinestraße 13"
-  u.city_po = "Berlin, 12049"
+  u.address = "Leinestraße 13, Berlin"
   u.email = "y.pfeiffer@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -157,8 +149,7 @@ user9.save
 user10 = User.new do |u|
   u.first_name = "Nicole"
   u.last_name = "Friedrich"
-  u.street_no = "Teupitzer Straße 57"
-  u.city_po = "Berlin, 12059"
+  u.address = "Teupitzer Straße 57, Berlin"
   u.email = "nikki88@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -169,8 +160,7 @@ user10.save
 user11 = User.new do |u|
   u.first_name = "Nina"
   u.last_name = "Jäger"
-  u.street_no = "Schönhauser Straße 49"
-  u.city_po = "Berlin, 13158"
+  u.address = "Schönhauser Straße 49, Berlin"
   u.email = "nina.jager@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -181,8 +171,7 @@ user11.save
 user12 = User.new do |u|
   u.first_name = "Hannah"
   u.last_name = "Voigt"
-  u.street_no = "Grillostraße 9"
-  u.city_po = "Berlin, 12277"
+  u.address = "Grillostraße 9, Berlin"
   u.email = "hannahv@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -193,8 +182,7 @@ user12.save
 user13 = User.new do |u|
   u.first_name = "Kathrin"
   u.last_name = "Schäfer"
-  u.street_no = "Wesenberger Ring 6"
-  u.city_po = "Berlin, 12359"
+  u.address = "Wesenberger Ring 6, Berlin"
   u.email = "k.schafer@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -205,8 +193,7 @@ user13.save
 user14 = User.new do |u|
   u.first_name = "Claudia"
   u.last_name = "Becker"
-  u.street_no = "Martin-Wagner-Ring 16"
-  u.city_po = "Berlin, 12359"
+  u.address = "Martin-Wagner-Ring 16, Berlin"
   u.email = "claudi1@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -217,8 +204,7 @@ user14.save
 user15 = User.new do |u|
   u.first_name = "Caroline"
   u.last_name = "Baumann"
-  u.street_no = "Modersohnstraße 62"
-  u.city_po = "Berlin, 10245"
+  u.address = "Modersohnstraße 62, Berlin"
   u.email = "carro.baumann@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -229,8 +215,7 @@ user15.save
 user16 = User.new do |u|
   u.first_name = "Silvia"
   u.last_name = "Herrmann"
-  u.street_no = "Neue Blumenstraße 21"
-  u.city_po = "Berlin, 10179"
+  u.address = "Neue Blumenstraße 21, Berlin"
   u.email = "silvia.hm@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -241,8 +226,7 @@ user16.save
 user17 = User.new do |u|
   u.first_name = "Lara"
   u.last_name = "Schumacher"
-  u.street_no = "Ziegelstraße 20"
-  u.city_po = "Berlin, 10117"
+  u.address = "Ziegelstraße 20, Berlin"
   u.email = "larasch@jamable.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -253,8 +237,7 @@ user17.save
 user18 = User.new do |u|
   u.first_name = "Petra"
   u.last_name = "Hoffmann"
-  u.street_no = "Markgrafenstraße 63"
-  u.city_po = "Berlin, 10969"
+  u.address = "Markgrafenstraße 63, Berlin"
   u.email = "petrahoff@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -265,8 +248,7 @@ user18.save
 user19 = User.new do |u|
   u.first_name = "Sarah"
   u.last_name = "Engel"
-  u.street_no = "Buchholzer Straße 8"
-  u.city_po = "Berlin, 10437"
+  u.address = "Buchholzer Straße 8, Berlin"
   u.email = "s.engel@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -278,8 +260,7 @@ user19.save
 user20 = User.new do |u|
   u.first_name = "Alicia"
   u.last_name = "Stromback"
-  u.street_no = "Richardstraße 99"
-  u.city_po = "Berlin, 12043"
+  u.address = "Richardstraße 99, Berlin"
   u.email = "stormbreaker@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -290,8 +271,7 @@ user20.save
 user21 = User.new do |u|
   u.first_name = "Valentina"
   u.last_name = "Corchado"
-  u.street_no = "Gutschmidtstraße 52"
-  u.city_po = "Berlin, 12359"
+  u.address = "Gutschmidtstraße 52, Berlin"
   u.email = "v.corchado@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -302,8 +282,7 @@ user21.save
 user22 = User.new do |u|
   u.first_name = "Bettina"
   u.last_name = "Graf"
-  u.street_no = "Mohriner Allee 22"
-  u.city_po = "Berlin, 12347"
+  u.address = "Mohriner Allee 22, Berlin"
   u.email = "betty.graf@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -314,8 +293,7 @@ user22.save
 user23 = User.new do |u|
   u.first_name = "Catalina"
   u.last_name = "Acosta"
-  u.street_no = "Friedrichstraße 24"
-  u.city_po = "Berlin, 10969"
+  u.address = "Friedrichstraße 24, Berlin"
   u.email = "catalina.c@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -326,8 +304,7 @@ user23.save
 user24 = User.new do |u|
   u.first_name = "Kerstin"
   u.last_name = "Beck"
-  u.street_no = "Paster-Behrens-Straße 81"
-  u.city_po = "Berlin, 12359"
+  u.address = "Paster-Behrens-Straße 81, Berlin"
   u.email = "kerstin.beck@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -338,8 +315,7 @@ user24.save
 user25 = User.new do |u|
   u.first_name = "Ursula"
   u.last_name = "Berger"
-  u.street_no = "Pintschallee 7"
-  u.city_po = "Berlin, 12347"
+  u.address = "Pintschallee 7, Berlin"
   u.email = "ursula.b@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -350,8 +326,7 @@ user25.save
 user26 = User.new do |u|
   u.first_name = "Sonja"
   u.last_name = "Otto"
-  u.street_no = "Hippelstraße 26"
-  u.city_po = "Berlin, 12347"
+  u.address = "Hippelstraße 26, Berlin"
   u.email = "sonja_otto@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -362,8 +337,7 @@ user26.save
 user27 = User.new do |u|
   u.first_name = "Susanne"
   u.last_name = "Günther"
-  u.street_no = "Grünlingweg 5"
-  u.city_po = "Berlin, 12351"
+  u.address = "Grünlingweg 5, Berlin"
   u.email = "sussi-g@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -374,8 +348,7 @@ user27.save
 user28 = User.new do |u|
   u.first_name = "Bertha"
   u.last_name = "Müller"
-  u.street_no = "Simplonstraße 25"
-  u.city_po = "Berlin, 10245"
+  u.address = "Simplonstraße 25, Berlin"
   u.email = "muller1@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -386,8 +359,7 @@ user28.save
 user29 = User.new do |u|
   u.first_name = "Monika"
   u.last_name = "Weiß"
-  u.street_no = "Mühsamstraße 65"
-  u.city_po = "Berlin, 10249"
+  u.address = "Mühsamstraße 65, Berlin"
   u.email = "monikaw@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -398,8 +370,7 @@ user29.save
 user30 = User.new do |u|
   u.first_name = "Melanie"
   u.last_name = "Krämer"
-  u.street_no = "Ilgenweg 11"
-  u.city_po = "Berlin, 12349"
+  u.address = "Ilgenweg 11, Berlin"
   u.email = "melanie88@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -676,5 +647,23 @@ end
 booking2.midwife = midwife20
 booking2.mom = mom2
 booking2.save
+
+# appointments
+
+appointment1 = Appointment.new do |u|
+  u.title = "Get to know"
+  u.status = "confirmed"
+  u.start_time = "Wed, 07 Dec 2022 18:49:08.045702000 CET +01:00"
+end
+appointment1.booking = booking2
+appointment1.save
+
+appointment2 = Appointment.new do |u|
+  u.title = "Check-up"
+  u.status = "confirmed"
+  u.start_time = "Fri, 09 Dec 2022 12:00:00.045702000 CET +01:00"
+end
+appointment2.booking = booking2
+appointment2.save
 
 puts "done"
