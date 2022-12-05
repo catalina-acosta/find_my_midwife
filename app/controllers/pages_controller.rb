@@ -26,6 +26,10 @@ class PagesController < ApplicationController
     @midwives = Midwife.excluding( current_user.mom.midwives )
   end
 
+  def chatroom
+    
+  end
+
   private
 
   def set_mom
