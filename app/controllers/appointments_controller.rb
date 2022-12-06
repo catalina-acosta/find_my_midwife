@@ -8,7 +8,7 @@ class AppointmentsController < ApplicationController
 
   def index
     @booking = Booking.find(params[:booking_id])
-    @appointments = Appointment.all
+    @appointments = current_user.mom.appointments
   end
 
   def show
