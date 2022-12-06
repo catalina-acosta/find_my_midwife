@@ -1,2 +1,23 @@
 <h1>these are my chatrooms</h1>
-
+<% if current_user.is_midwife? %>
+  <% @bookings.each do |booking| %>
+    <% if booking.messages.empty? %>
+    <% else %>
+      <% if current_user.midwife == booking.midwife %>
+        <%= link_to booking_path(booking), class: "text-decoration-none" do %>
+          <%= booking.mom.user.first_name %>
+        <% end %>
+        <%= booking.messages.last.content %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% else %>
+  <% @bookings.each do |booking| %>
+    <% if booking.messages.empty? %>
+    <% else %>
+      <% if current_user.mom == booking.mom %>
+        <%= booking.midwife.user.first_name %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
