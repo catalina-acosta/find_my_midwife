@@ -655,6 +655,33 @@ booking3.midwife = midwife20
 booking3.mom = mom3
 booking3.save
 
+booking4 = Booking.new do |u|
+  u.status = 1
+end
+booking4.midwife = midwife20
+booking4.mom = mom4
+booking3.save
+
+booking5 = Booking.new do |u|
+  u.status = 1
+end
+booking5.midwife = midwife20
+booking5.mom = mom5
+booking5.save
+
+booking6 = Booking.new do |u|
+  u.status = 1
+end
+booking6.midwife = midwife20
+booking6.mom = mom6
+booking6.save
+
+booking7 = Booking.new do |u|
+  u.status = 1
+end
+booking7.midwife = midwife20
+booking7.mom = mom7
+booking7.save
 # appointments
 
 appointment1 = Appointment.new do |u|
@@ -689,3 +716,12 @@ end
 appointment4.booking = booking3
 appointment4.save
 puts "done"
+
+#messages
+
+# message1 = Message.new do |u|
+#   u.content = "Hello"
+# end
+# message1.booking = booking1
+# message1.user.mom = mom1
+# message.save

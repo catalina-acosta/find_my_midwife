@@ -1,0 +1,57 @@
+
+.chatroom-index{
+  padding-top: 24px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  margin-bottom: 8px;
+}
+#chatroom-midwife {
+  background-color: #DC928D;
+  padding-top: 16px;
+}
+
+#chatroom-mom {
+  background-color: #68B4AC;
+}
+
+#midwife-background{
+  background-color: #F5C2BD;
+}
+
+#mom-background{
+  background-color: #7FE9DE;
+}
+
+
+.chatroom-card{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.chatroom-time {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.messages {
+
+}
+#message {
+
+}
+
+
+.header-chat{
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 16px;
+  align-items: center;
+}
