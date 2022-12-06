@@ -44,6 +44,15 @@
   margin-bottom: 8px;
 }
 
+.message-bubble-user {
+  background-color: #F5C2BD;
+  border-radius: 12px;
+  padding: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
 
 .header-chat{
   padding-top: 8px;
