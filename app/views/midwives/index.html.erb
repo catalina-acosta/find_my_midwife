@@ -10,11 +10,11 @@
   </div>
   <div>
     <div class="container">
-      <div class="outer-card mb-5 pb-0" id="midwife-card">
+      <div class="outer-card mb-3 pb-0" id="midwife-card">
         <div class="background-card background-h3">
           <h2>Upcoming Appointment</h2>
           <%= link_to calendar_path, class: "link-pink" do %>
-            <h3>See all</h3>
+            <h3 style="font-weight: bold">See all</h3>
           <% end %>
         </div>
         <% if !current_user.midwife.upcoming_appointment.nil? %>
@@ -42,11 +42,11 @@
     </div>
       <div class="container pb-5">
       <div class="outer-card mb-4" id="midwife-card">
-        <div class="background-card">
+        <div class="background-card pb-0">
           <h2>New Requests</h2>
         </div>
         <% if !current_user.midwife.new_requests.nil? %>
-          <div class="inner-card">
+          <div class="inner-card pt-0 pb-0">
             <div class="name-avatar">
               <%= cl_image_tag current_user.midwife.new_requests.mom.photo.key , class: "avatar"%>
               <h4><%= current_user.midwife.new_requests.mom.user.first_name %> <%= current_user.midwife.new_requests.mom.user.last_name %></h4>
