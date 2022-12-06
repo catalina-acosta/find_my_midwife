@@ -29,7 +29,10 @@ class PagesController < ApplicationController
   end
 
   def chatrooms
-    @bookings = Booking.all
+    if current_user.is_midwife?
+      @bookings = @bookings.where(midwife_id == current_user.id)
+    else
+      @bookings = @bookings.where(mom_id == current_user.id)
   end
 
   private
