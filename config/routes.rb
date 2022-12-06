@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   get 'search', to: 'pages#search', as: :search
   get 'calendar', to: 'pages#calendar', as: :calendar
+  get 'chatrooms', to: 'pages#chatrooms', as: :chatrooms
   patch 'bookings/:id/accepted', to: 'bookings#accepted', as: 'accepted'
   patch 'bookings/:id/cancelled', to: 'bookings#cancelled', as: 'cancelled'
   patch 'bookings/:id/cancelled_user', to: 'bookings#cancelled_user', as: 'cancelled_user'

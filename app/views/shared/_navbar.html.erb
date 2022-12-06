@@ -2,17 +2,19 @@
     <% if current_user.is_midwife %>
       <div class="navbar-fymw" id="navbar-midwife">
         <%= link_to bookings_path do %>
-          <i class="fa-solid fa-user-check" class="icon"></i>
+          <i class="fa-solid fa-user-check icon-navbar"></i>
         <% end  %>
         <%= link_to calendar_path do %>
-          <i class="fa-solid fa-calendar-check" class="icon"></i>
+          <i class="fa-solid fa-calendar-check icon-navbar"></i>
         <% end %>
           <%= link_to midwives_path do %>
-        <i class="fa-solid fa-house"></i>
+        <i class="fa-solid fa-house icon-navbar"></i>
           <% end %>
-        <i class="fa-solid fa-comment"></i>
+        <%= link_to chatrooms_path do %>
+          <i class="fa-solid fa-comment icon-navbar"></i>
+        <% end %>
         <div class="dropup">
-          <i class="fa-solid fa-gear" data-bs-toggle="dropdown" aria-expanded="false"></i>
+          <i class="fa-solid fa-gear icon-navbar" data-bs-toggle="dropdown" aria-expanded="false"></i>
           <ul class="dropdown-menu">
             <li><%= button_to "Log out", destroy_user_session_path, method: :delete, data: {turbo: false}%></li>
             <li><%= button_to 'Profile', midwife_path(current_user.midwife), method: :get, data: {turbo: false} %></li>
@@ -22,17 +24,19 @@
     <% else %>
       <div class="navbar-fymw" id="navbar-mom">
         <%= link_to search_path do %>
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-magnifying-glass icon-navbar"></i>
         <% end %>
         <%= link_to bookings_path do %>
-          <i class="fa-solid fa-calendar-check"></i>
+          <i class="fa-solid fa-calendar-check icon-navbar"></i>
         <% end %>
         <%= link_to moms_path do %>
-          <i class="fa-solid fa-house"></i>
+          <i class="fa-solid fa-house icon-navbar"></i>
         <% end %>
-        <i class="fa-solid fa-comment"></i>
+        <%= link_to chatrooms_path do %>
+          <i class="fa-solid fa-comment icon-navbar"></i>
+        <% end %>
         <div class="dropup">
-          <i class="fa-solid fa-gear" data-bs-toggle="dropdown" aria-expanded="false"></i>
+          <i class="fa-solid fa-gear icon-navbar" data-bs-toggle="dropdown" aria-expanded="false"></i>
           <ul class="dropdown-menu">
             <%= button_to "Log out", destroy_user_session_path, method: :delete, data: {turbo: false}%>
             <%= link_to 'Profile,', mom_path(current_user.mom) %>
