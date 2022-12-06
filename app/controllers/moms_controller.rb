@@ -8,6 +8,12 @@ class MomsController < ApplicationController
 
   def show
     @note = Note.new
+    @markers = [
+      {
+        lat: @mom.user.latitude,
+        lng: @mom.user.longitude
+      }
+    ]
   end
 
   def new
