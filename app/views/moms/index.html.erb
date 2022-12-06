@@ -13,7 +13,6 @@
       <div class="outer-card mb-5" id="mom-card">
         <div class="background-card">
           <h2>Upcoming Appointment</h2>
-          <h3>see all</h3>
         </div>
         <% if !current_user.mom.upcoming_appointment.nil? %>
           <div class="inner-card">
@@ -37,7 +36,6 @@
       <div class="outer-card" id="mom-card">
         <div class="background-card">
           <h2>My Midwife</h2>
-          <h3>see all</h3>
         </div>
         <% if current_user.mom.recent_booking %>
           <div class="inner-card">
