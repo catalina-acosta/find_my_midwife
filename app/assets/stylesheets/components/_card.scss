@@ -1,6 +1,7 @@
 #midwife-card {
-  background-color:#DC928D;
+  background-color: #ffffff;
 }
+D989B5
 
 #mom-card {
   background-color:#68B4AC;
@@ -10,9 +11,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 16px;
+  padding: 12px;
   border-radius: 10px;
   gap: 16px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .outer-card-calendar{
@@ -35,7 +37,7 @@
 .inner-card{
   display: flex;
   flex-direction: column;
-  background-color: #F6F8F8;
+  background-color: #ffffff;
   border-radius: 10px;
   align-items:flex-start;
   justify-content: flex-start;
@@ -96,4 +98,27 @@
 .icon{
   color: #DC928D;
   font-size: 20px;
+}div
+
+.background-h3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-accept {
+  background-color: #FFCAC2;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+  margin-right: 10px;
+}
+
+.btn-deny {
+  border: 1px;
+  border-style: solid;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+.link-pink {
+  color: #FFC4C4;
 }

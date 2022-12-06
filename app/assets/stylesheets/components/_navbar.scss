@@ -22,7 +22,7 @@
   left: 0;
 }
 #navbar-midwife{
-  background-color: #F5C2BD;
+  background-color: #ffffff;
 }
 
 #navbar-mom{
@@ -31,7 +31,7 @@
 
 .icon-navbar {
   text-decoration: none;
-  color: #474D4D;
+  color: #FC9D9D;
   font-size: 24px;
 }
 
@@ -40,4 +40,18 @@
   justify-content: space-between;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.dropdown-menu {
+  text-align: center;
+  z-index: 100 !important;
+  // inset: auto 0px 0px auto !important;
+  a {
+    padding: auto -20px;
+  }
+}
+
+.dropdown-fix {
+  transform: translate3d(24px, -37px, 0px) !important;
+  --bs-dropdown-min-width: unset !important;
 }
