@@ -1,4 +1,3 @@
-<% if message.user_id == current_user.id %>
 <div class="message-bubble" id="message <%= message.id %>">
   <small>
     <strong><%= message.user.first_name %></strong>
@@ -6,4 +5,3 @@
   </small>
   <p><%= message.content %></p>
 </div>
-<% end %>
