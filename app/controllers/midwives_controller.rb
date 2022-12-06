@@ -1,11 +1,19 @@
 class MidwivesController < ApplicationController
   before_action :set_mom, only: [ ]
-  before_action :set_midwife, only: [ :show ]
+  before_action :set_midwife, only: [ :show, :update]
 
   def index
     return redirect_to moms_path unless current_user.is_midwife
 
-    @midwives = Midwife.all
+    if current_user.midwife.upcoming_appointment
+      @mom_user = current_user.midwife.upcoming_appointment.booking.mom.user
+      @markers = [
+        {
+          lat: @mom_user.latitude,
+          lng: @mom_user.longitude
+        }
+      ]
+    end
   end
 
   def show; end
@@ -21,6 +29,15 @@ class MidwivesController < ApplicationController
       redirect_to midwives_path
     else
       render :new
+    end
+  end
+
+  def update
+    @midwife.update(midwife_params)
+    if @midwife.save
+      redirect_to midwife_path(@midwife)
+    else
+      render 'midwives/show', status: :unprocessable_entity
     end
   end
 

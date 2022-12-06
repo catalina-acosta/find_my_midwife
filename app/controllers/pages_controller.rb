@@ -2,6 +2,7 @@ class PagesController < ApplicationController
 
   def calendar
     @appointments = current_user.midwife.appointments
+    @moms = Mom.all
   end
 
   def home

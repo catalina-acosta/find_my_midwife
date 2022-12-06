@@ -3,15 +3,23 @@
       <%= date.day %>
   <% end %>
   <div class="card-container">
-    <div class="inner-card align-items-center " id="midwife-card">
-      <% @appointments.each do |appointment| %>
-          <% if appointment.confirmed? %>
-          <div>
-            <h3><%= appointment.booking.mom.user.first_name %> <%= appointment.booking.mom.user.last_name %></h3>
-            <p> <%= appointment.title.capitalize %>
-            <div><p><%= appointment.start_time.strftime("%A, %d %b %Y %l:%M %p") %></p></div>
-            <div><%= link_to 'cancel', cancelled_appointment_path(appointment.booking, appointment), data: { turbo_method: :patch}, class: 'text-danger' %></div>
-          </div>
+    <div class="outer-card-calendar align-items-center" id="midwife-card">
+      <% @moms.each do |mom| %>
+          <% mom.bookings.each do |booking| %>
+            <% unless booking.appointments.empty? || booking.mom != mom || booking.midwife != current_user.midwife%>
+              <div class="outer-card-appointment w-100">
+              <%= link_to mom_path(mom), class: "text-decoration-none text-dark" do %>
+                <h4><%= mom.user.first_name %> <%= mom.user.last_name %> (<%= booking.appointments.count %>)
+                <%= cl_image_tag mom.photo.key, class: "avatar-large" %></h4>
+              <% end %>
+              <% booking.appointments.each do |appointment| %>
+                <div class="inner-card-appointment">
+                  <p><strong><%= appointment.title %></strong> - <%= appointment.start_time.strftime("%A, %d %b %Y %l:%M %p") %></p>
+                </div>
+              <% end %>
+              </div>
+              <div class="border"></div>
+            <% end %>
           <% end %>
       <% end %>
     </div>

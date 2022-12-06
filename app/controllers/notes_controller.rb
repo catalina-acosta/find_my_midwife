@@ -29,6 +29,7 @@ class NotesController < ApplicationController
 
   def destroy
     @note.destroy
+    @mom = Mom.find(params[:mom_id])
     redirect_to mom_path(@mom), status: :see_other
   end
 

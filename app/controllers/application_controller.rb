@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   # before_action :set_time_zone, if: :user_signed_in?
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :street_no, :city_po, :is_midwife])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :street_no, :city_po, :is_midwife])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :address, :is_midwife])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :address, :is_midwife])
   end
 
   def set_no_navbar

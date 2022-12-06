@@ -111,9 +111,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_084608) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "street_no"
-    t.string "city_po"
+    t.string "address"
     t.boolean "is_midwife", default: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -13,18 +13,26 @@
       <div class="outer-card mb-5" id="midwife-card">
         <div class="background-card">
           <h2>Upcoming Appointment</h2>
-          <h3>see all</h3>
+          <%= link_to calendar_path do %>
+            <h3>see all</h3>
+          <% end %>
         </div>
         <% if !current_user.midwife.upcoming_appointment.nil? %>
           <div class="inner-card">
-            <div class="name-avatar">
-              <%= cl_image_tag current_user.midwife.upcoming_appointment.booking.mom.photo.key , class: "avatar"%>
-              <h4><%= current_user.midwife.upcoming_appointment.booking.mom.user.first_name %> <%= current_user.midwife.upcoming_appointment.booking.mom.user.last_name %> - <%= current_user.midwife.upcoming_appointment.title %></h4>
-            </div>
-            <div class="border"></div>
-            <div class="info-card">
-              <h5><i class="fa fa-clock"></i> <%= current_user.midwife.upcoming_appointment.start_time.strftime("%A, %d %b %Y %l:%M %p") %> </h5>
-              <h5><i class="fa fa-location-dot"></i>  <%= current_user.midwife.upcoming_appointment.booking.mom.user.street_no %>, <%= current_user.midwife.upcoming_appointment.booking.mom.user.city_po %> </h5>
+              <div class="name-avatar">
+                <%= cl_image_tag current_user.midwife.upcoming_appointment.booking.mom.photo.key , class: "avatar"%>
+                <h4><%= current_user.midwife.upcoming_appointment.booking.mom.user.first_name %> <%= current_user.midwife.upcoming_appointment.booking.mom.user.last_name %>: <%= current_user.midwife.upcoming_appointment.title %></h4>
+              </div>
+              <div class="border"></div>
+              <div class="info-card">
+                <h5><i class="fa fa-clock"></i> <%= current_user.midwife.upcoming_appointment.start_time.strftime("%A, %d %b %Y %l:%M %p") %> </h5>
+                <h5><i class="fa fa-location-dot"></i>  <%= current_user.midwife.upcoming_appointment.booking.mom.user.address %> </h5>
+              </div>
+              <div style="width: 100%; height: 200px;"
+              data-controller="map"
+              data-map-markers-value="<%= @markers.to_json %>"
+              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+              </div>
             </div>
           </div>
         <% else %>
@@ -47,7 +55,7 @@
             <div class="border"></div>
             <div class="info-card">
               <h5><i class="fa fa-solid fa-baby"></i> Due Date: <%= current_user.midwife.new_requests.mom.due_date %> </h5>
-              <h5><i class="fa fa-location-dot"></i>  <%= current_user.midwife.new_requests.mom.user.street_no %>, <%= current_user.midwife.new_requests.mom.user.city_po %> </h5>
+              <h5><i class="fa fa-location-dot"></i>  <%= current_user.midwife.new_requests.mom.user.address%> </h5>
               <%= link_to 'Accept', accepted_path(current_user.midwife.new_requests), data: { turbo_method: :patch} %>
               <%= link_to 'Deny', cancelled_path(current_user.midwife.new_requests), data: { turbo_method: :patch}, class: 'text-danger' %>
             </div>
