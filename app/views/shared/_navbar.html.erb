@@ -16,8 +16,10 @@
         <div class="dropup">
           <i class="fa-solid fa-gear icon-navbar" data-bs-toggle="dropdown" aria-expanded="false"></i>
           <div class="dropdown-menu dropdown-fix">
-            <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
-            <%= link_to 'Profile', midwife_path(current_user.midwife), class: "dropdown-item" %>
+            <%= button_to "Log out", destroy_user_session_path, class: "dropdown-item", method: :delete, data: {turbo: false} %>
+
+            <%= button_to 'Profile', midwife_path(current_user.midwife), class: "dropdown-item", method: :get, data: {turbo: false} %>
+
           </div>
         </div>
       </div>
@@ -38,8 +40,8 @@
         <div class="dropup">
           <i class="fa-solid fa-gear icon-navbar" data-bs-toggle="dropdown" aria-expanded="false"></i>
           <ul class="dropdown-menu">
-            <%= button_to "Log out", destroy_user_session_path, method: :delete, data: {turbo: false} %>
-            <%= button_to 'Profile', mom_path(current_user.mom), method: :get, data: {turbo: false} %>
+            <%= button_to "Log out", destroy_user_session_path, class: "dropdown-item", method: :delete, data: {turbo: false} %>
+            <%= button_to 'Profile', mom_path(current_user.mom), class: "dropdown-item", method: :get, data: {turbo: false} %>
           </ul>
         </div>
       </div>

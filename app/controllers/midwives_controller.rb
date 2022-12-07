@@ -57,6 +57,6 @@ class MidwivesController < ApplicationController
   end
 
   def midwife_params
-    params.require(:midwife).permit(:speciality, :years_experience, :availability, :photo)
+    params.require(:midwife).permit(:speciality, :years_experience, :availability, :photo, :bio)
   end
 end
