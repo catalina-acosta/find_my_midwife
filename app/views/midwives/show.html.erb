@@ -1,5 +1,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <div class="container">
+  <div>
+    <%= cl_image_tag @midwife.photo.key, class:"show-img center mt-2"%>
+  </div>
   <div class="outer-card align-items-center">
   <% if current_user.is_midwife? %>
     <div class="inner-card" id="midwife-card">
@@ -8,7 +11,6 @@
   <% end %>
       <div class="d-flex align-items-center">
       <h2><%= @midwife.user.first_name %> <%= @midwife.user.last_name %></h2>
-      <%= cl_image_tag @midwife.photo.key, class: "avatar-large"%>
       </div>
       <div class="inner-card">
       <% if current_user.midwife = @midwife %>
@@ -44,8 +46,8 @@
               </div>
             </div>
       <% else %>
-        <%= link_to 'Send Request', midwife_bookings_path(@midwife),  data: {turbo_method: :post}, class: 'btn btn-primary' %>
-        <%= link_to 'Back', search_path, class: 'btn btn-primary' %>
+        <%= link_to 'Send Request', midwife_bookings_path(@midwife),  data: {turbo_method: :post}, class: 'btn btn-blue' %>
+        <%= link_to 'Back', search_path, class: 'btn btn-blue' %>
       <% end %>
     </div>
   </div>
