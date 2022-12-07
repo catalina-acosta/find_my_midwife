@@ -32,6 +32,7 @@ puts "Appointments delayed due to: Act of God"
  mom17 = URI.open('app/assets/images/moms/mom17.jpg')
  mom18 = URI.open('app/assets/images/moms/mom18.jpg')
  mom19 = URI.open('app/assets/images/moms/mom19.jpg')
+ mom20 = URI.open('app/assets/images/moms/mom20.jpg')
 
 # midwife photos
 midwife20 = URI.open('app/assets/images/midwives/midwife20.jpg')
@@ -45,6 +46,7 @@ midwife27 = URI.open('app/assets/images/midwives/midwife27.jpg')
 midwife28 = URI.open('app/assets/images/midwives/midwife28.jpg')
 midwife29 = URI.open('app/assets/images/midwives/midwife29.jpg')
 midwife30 = URI.open('app/assets/images/midwives/midwife30.jpg')
+midwife31 = URI.open('app/assets/images/midwives/midwife31.jpg')
 
 # creating mom user
 user1 = User.new do |u|
@@ -258,9 +260,9 @@ user19.save
 
 # creating midwife users
 user20 = User.new do |u|
-  u.first_name = "Alicia"
-  u.last_name = "Stromback"
-  u.address = "Richardstraße 99, Berlin"
+  u.first_name = "Alexandra"
+  u.last_name = "Becker"
+  u.address = "Elbestraße 36, Berlin"
   u.email = "stormbreaker@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
@@ -291,10 +293,10 @@ end
 user22.save
 
 user23 = User.new do |u|
-  u.first_name = "Catalina"
-  u.last_name = "Acosta"
+  u.first_name = "Julia"
+  u.last_name = "Meyer"
   u.address = "Friedrichstraße 24, Berlin"
-  u.email = "catalina.c@gmail.com"
+  u.email = "julia.m@gmail.com"
   u.password = "123456"
   u.password_confirmation = "123456"
   u.is_midwife = true
@@ -377,6 +379,28 @@ user30 = User.new do |u|
   u.is_midwife = true
 end
 user30.save
+
+user31 = User.new do |u|
+  u.first_name = "Catalina"
+  u.last_name = "Acosta Rivera"
+  u.address = "Werbellinstraße 36, Berlin"
+  u.email = "cata.acosta@gmail.com"
+  u.password = "123456"
+  u.password_confirmation = "123456"
+  u.is_midwife = true
+end
+user31.save
+
+user32 = User.new do |u|
+  u.first_name = "Alicia"
+  u.last_name = "Strömbäck"
+  u.address = "Richardstraße 99, Berlin"
+  u.email = "alicia.stromback@gmail.com"
+  u.password = "123456"
+  u.password_confirmation = "123456"
+  u.is_midwife = false
+end
+user32.save
 
 # mom
 
@@ -532,6 +556,14 @@ end
 mom19.user = user19
 mom19.save
 
+mom20 = Mom.new do |u|
+  u.phone = "0 5734 512954"
+  u.due_date = 'Tue, 20 Dec 2022'
+  u.photo.attach(io: mom20, filename: 'mom20.jpg', content_type: 'image/jpg')
+end
+mom20.user = user32
+mom20.save
+
 # midwife
 
 midwife20 = Midwife.new do |u|
@@ -632,6 +664,15 @@ midwife30 = Midwife.new do |u|
 end
 midwife30.user = user30
 midwife30.save
+
+midwife31 = Midwife.new do |u|
+  u.speciality = "Birth preparation"
+  u.years_experience = "4"
+  u.availability = 'Mon, 12 Dec 2022'
+  u.photo.attach(io: midwife31, filename: 'midwife31.jpg', content_type: 'image/jpg')
+end
+midwife31.user = user31
+midwife31.save
 
 # bookings
 booking1 = Booking.new do |u|
