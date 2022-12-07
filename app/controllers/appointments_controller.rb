@@ -27,7 +27,7 @@ class AppointmentsController < ApplicationController
     if @appointment.save
       redirect_to calendar_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

@@ -11,16 +11,16 @@
                 <%= link_to mom_path(booking.mom), class: "text-decoration-none text-dark" do %>
                   <div class="name-avatar">
                     <%= cl_image_tag booking.mom.photo.key , class: "avatar"%>
-                    <h4><%= booking.mom.user.first_name %></h4>
+                      <h4><strong><%= booking.mom.user.first_name %> <%= booking.mom.user.last_name %></strong></h4>
                   </div>
                     <div class="border m-2"></div>
                   <div class="info-card">
-                    <p><i class="fa-solid fa-baby"></i><%=  booking.mom.due_date %></p>
-                    <p><i class="fa fa-map-marker "></i><%=  booking.mom.user.address %></p>
+                    <p><i class="fa-solid fa-baby" style="color:#FC9D9D"></i>  <%=  booking.mom.due_date %></p>
+                    <p><i class="fa fa-map-marker" style="color:#FC9D9D"></i>  <%=  booking.mom.user.address %></p>
                   </div>
                 <% end %>
-                <%= link_to "New message", booking_path(booking), class: "btn btn-accept" %>
-                <%= link_to "New Appointment for #{booking.mom.user.first_name}", new_booking_appointment_path(booking), class: "btn btn-accept" %>
+                <%= link_to "Message", booking_path(booking), class: "btn btn-accept" %>
+                <%= link_to "New Appointment", new_booking_appointment_path(booking), class: "btn btn-accept" %>
               </div>
             <% end %>
           <% end %>
@@ -35,7 +35,7 @@
         <% end %>
   <% else %>
     <div class="container">
-      <div class="outer-card mb-5" id="mom-card">
+      <div class="outer-card mt-3 mb-5" id="mom-card">
         <div class="background-card">
           <h2>Appointments</h2>
         </div>
@@ -43,19 +43,23 @@
           <% @bookings.each do |booking| %>
             <% unless booking.pending? %>
               <div class="inner-card">
-                  <div class="name-avatar">
-                    <%= cl_image_tag booking.midwife.photo.key , class: "avatar"%>
-                    <h4><%= booking.midwife.user.first_name %></h4>
-                    <%= link_to "New message", booking_path(booking), class: "btn btn-accept" %>
+                  <div class="name-avatar" style="align-items: end;">
+                    <div class="picture-name">
+                      <%= cl_image_tag booking.midwife.photo.key , class: "avatar"%>
+                      <h4><%= booking.midwife.user.first_name %> <%= booking.midwife.user.last_name %></h4>
+                    </div>
                   </div>
                     <div class="border"></div>
                   <div class="info-card">
-                    <p><i class="fa-solid fa-star"></i>Speciality: <%=  booking.midwife.speciality %></p>
-                    <p><i class="fa fa-clock"></i> Appointments:
+                    <p><i class="fa-solid fa-star" style="color:#A3C7D6"></i> Speciality: <%=  booking.midwife.speciality %></p>
+                    <p><i class="fa fa-clock" style="color:#A3C7D6"></i>    Appointments:
                     <% booking.appointments.each do |appointment| %>
                       <% unless appointment.cancelled? %>
                       <p><%= appointment.title %> <%= appointment.start_time.strftime(("%A, %d %b %Y %l:%M %p") ) %></p>
-                      <%= link_to "View Appointment for #{booking.midwife.user.first_name} #{booking.midwife.user.last_name}", booking_appointments_path(booking), class: "btn btn-accept" %>
+                      <div class="display-flexbox" style="justify-content: space-evenly;">
+                      <%= link_to "Calendar", booking_appointments_path(booking), class: "btn btn-blue"%>
+                      <%= link_to "Message", booking_path(booking), class: "btn btn-blue" %>
+                      </div>
                       <% end %>
                     <% end %></p>
               </div>
