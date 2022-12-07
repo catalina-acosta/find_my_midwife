@@ -719,9 +719,16 @@ puts "done"
 
 #messages
 
-# message1 = Message.new do |u|
-#   u.content = "Hello"
-# end
-# message1.booking = booking1
-# message1.user.mom = mom1
-# message.save
+message1 = Message.new do |u|
+  u.content = "Hello"
+end
+message1.booking = booking1
+message1.user = user1
+message1.save
+
+message2 = Message.new do |u|
+  u.content = "Hello"
+end
+message2.booking = booking2
+message2.user = user2
+message2.save
