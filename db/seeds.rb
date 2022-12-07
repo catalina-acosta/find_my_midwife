@@ -382,7 +382,7 @@ user30.save
 
 user31 = User.new do |u|
   u.first_name = "Catalina"
-  u.last_name = "Acosta Rivera"
+  u.last_name = "Acosta"
   u.address = "Werbellinstraße 36, Berlin"
   u.email = "cata.acosta@gmail.com"
   u.password = "123456"
