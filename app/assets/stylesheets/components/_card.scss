@@ -90,9 +90,20 @@ D989B5
 
 .name-avatar {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: start;
+  align-items: end;
   gap: 8px;
+  width: 100%;
+}
+
+.picture-name {
+  display: flex;
+  align-items: center;
+
+  h4 {
+    margin-bottom: 0px;
+    padding-left: 4px;
+  }
 }
 
 .icon{
@@ -121,4 +132,31 @@ D989B5
 
 .link-pink {
   color: #FFC4C4;
+}
+
+.btn-ghost {
+  color: #DC928D;
+  text-decoration: none;
+}
+
+.btn-blue {
+  background-color: #A3C7D6;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 10px;
+  // box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+  margin-right: 10px;
+  width: fit-content;
+}
+
+.btn-white {
+  border: 1px;
+  border-style: solid;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
 }

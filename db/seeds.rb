@@ -1,18 +1,18 @@
 require 'open-uri'
 
 # destroying everything
-puts 'Burning down old database...'
-puts 'Unbirthing Users...'
-User.destroy_all
-puts 'Midwives got pregnant..'
-Midwife.destroy_all
-puts 'Moms have to take care of children..'
-Mom.destroy_all
-puts 'Messages need to disapear..'
 Message.destroy_all
 puts 'Bookings were illegible..'
 Booking.destroy_all
 puts "Appointments delayed due to: Act of God"
+Appointment.destroy_all
+puts 'Burning down old database...'
+puts 'Midwives got pregnant..'
+Midwife.destroy_all
+puts 'Moms have to take care of children..'
+Mom.destroy_all
+puts 'Unbirthing Users...'
+User.destroy_all
 
 # mom photo
  mom1 = URI.open('app/assets/images/moms/mom1.jpg')
