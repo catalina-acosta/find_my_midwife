@@ -18,6 +18,11 @@
   <body>
     <%= render "shared/flashes" %>
     <div class="wrapper">
+      <% unless current_page? new_user_session_path %>
+        <div class="header">
+          <%= render "shared/header" %>
+        </div>
+      <% end %>
       <div class="content">
         <%= yield %>
       </div>
