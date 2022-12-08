@@ -417,6 +417,7 @@ mom1.save
 mom2 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Thu, 24 Nov 2022'
+  u.bio = "Hi there! My name is Lisa, I come from Berlin and I am expecting my thrid child"
   u.photo.attach(io: mom2, filename: 'mom2.jpg', content_type: 'image/jpg')
 end
 mom2.user = user2
@@ -425,6 +426,7 @@ mom2.save
 mom3 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Sat, 26 Nov 2022'
+  u.bio = "I am Anne-Marie, first time pregnant and really looking forward to have a midwife :) "
   u.photo.attach(io: mom3, filename: 'mom3.jpg', content_type: 'image/jpg')
 end
 mom3.user = user3
@@ -441,6 +443,7 @@ mom4.save
 mom5 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Mon, 28 Nov 2022'
+  u.bio = "Hello, Kristin here :) I come from Southern Germay and I recently moved to Berlin with my partner. We are expecting our first baby!"
   u.photo.attach(io: mom5, filename: 'mom5.jpg', content_type: 'image/jpg')
 end
 mom5.user = user5
@@ -561,6 +564,7 @@ mom19.save
 mom20 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Tue, 20 Dec 2022'
+  u.bio = "My name is Alicia, I come from a small town in Sweeden and I recently moved to Berlin. I am expecting my second child but it feels as if it was the first one!"
   u.photo.attach(io: mom20, filename: 'mom20.jpg', content_type: 'image/jpg')
 end
 mom20.user = user32
@@ -671,6 +675,7 @@ midwife31 = Midwife.new do |u|
   u.speciality = "Birth preparation"
   u.years_experience = "4"
   u.availability = 'Mon, 12 Dec 2022'
+  u.bio = "Hey there! My name is Catalina, I come from Colombia and I've been living and working as a midwife for the past 4 years. Helping moms in this journey is what I love most about my job :)"
   u.photo.attach(io: midwife31, filename: 'midwife31.jpg', content_type: 'image/jpg')
 end
 midwife31.user = user31
@@ -680,51 +685,65 @@ midwife31.save
 booking1 = Booking.new do |u|
   u.status = 0
 end
-booking1.midwife = midwife20
+booking1.midwife = midwife31
 booking1.mom = mom1
 booking1.save
 
 booking2 = Booking.new do |u|
   u.status = 1
 end
-booking2.midwife = midwife20
+booking2.midwife = midwife31
 booking2.mom = mom2
 booking2.save
 
 booking3 = Booking.new do |u|
   u.status = 1
 end
-booking3.midwife = midwife20
+booking3.midwife = midwife31
 booking3.mom = mom3
 booking3.save
 
 booking4 = Booking.new do |u|
   u.status = 1
 end
-booking4.midwife = midwife20
+booking4.midwife = midwife31
 booking4.mom = mom4
 booking3.save
 
 booking5 = Booking.new do |u|
   u.status = 1
 end
-booking5.midwife = midwife20
+booking5.midwife = midwife31
 booking5.mom = mom5
 booking5.save
 
 booking6 = Booking.new do |u|
   u.status = 1
 end
-booking6.midwife = midwife20
+booking6.midwife = midwife31
 booking6.mom = mom6
 booking6.save
 
 booking7 = Booking.new do |u|
   u.status = 1
 end
-booking7.midwife = midwife20
+booking7.midwife = midwife31
 booking7.mom = mom7
 booking7.save
+
+booking8 = Booking.new do |u|
+  u.status = 1
+end
+booking8.midwife = midwife31
+booking8.mom = mom8
+booking8.save
+
+booking9 = Booking.new do |u|
+  u.status = 1
+end
+booking9.midwife = midwife31
+booking9.mom = mom20
+booking9.save
 # appointments
 
 appointment1 = Appointment.new do |u|
@@ -763,15 +782,65 @@ puts "done"
 #messages
 
 message1 = Message.new do |u|
-  u.content = "Hello"
+  u.content = "Hello!"
 end
 message1.booking = booking1
 message1.user = user1
 message1.save
 
 message2 = Message.new do |u|
-  u.content = "Hello"
+  u.content = "Hi Catalina"
 end
 message2.booking = booking2
 message2.user = user2
 message2.save
+
+message3 = Message.new do |u|
+  u.content = "I am feeling much better, thank you!"
+end
+message3.booking = booking3
+message3.user = user3
+message3.save
+
+message4 = Message.new do |u|
+  u.content = "Are you comming by tomorrow?"
+end
+message4.booking = booking4
+message4.user = user4
+message4.save
+
+message5 = Message.new do |u|
+  u.content = "My baby is coughing a lot today"
+end
+message5.booking = booking5
+message5.user = user5
+message5.save
+
+message6 = Message.new do |u|
+  u.content = "Can we schedule an appointmment please?"
+end
+message6.booking = booking6
+message6.user = user6
+message6.save
+
+message7 = Message.new do |u|
+  u.content = "Can we schedule an appointmment please?"
+end
+message7.booking = booking7
+message7.user = user7
+message7.save
+
+message8 = Message.new do |u|
+  u.content = "Can we schedule an appointmment please?"
+end
+message8.booking = booking8
+message8.user = user2
+message8.save
+
+message9 = Message.new do |u|
+  u.content = "Can we schedule an appointmment please?"
+end
+message9.booking = booking9
+message9.user = user32
+message9.save
+puts "done"
