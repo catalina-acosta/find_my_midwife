@@ -1,11 +1,8 @@
 <div>
-  <div class="index-header">
+  <div class="index-header" style="margin-left: -70px;">
     <div>
       <h1 style="font-weight: 300;">Hello,</h1>
-      <h1 style="font-weight: 500;color: #A3C7D6;"><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h1>
-    </div>
-    <div id="right-header" class="image-cropper">
-      <i class="fa-solid fa-hand-holding-heart" style="color: #A3C7D6"></i>
+      <h1 style="font-weight: 500;color: #A3C7D6;"><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %>! </h1>
     </div>
   </div>
   <div>
@@ -45,8 +42,8 @@
             </div>
             <div class="border"></div>
             <div class="info-card">
-              <h5> Specialty: <%= current_user.mom.recent_booking.midwife.speciality %> </h5>
-              <h5> Experience: <%= current_user.mom.recent_booking.midwife.years_experience %> years</h5>
+              <h5><i class="fa-solid fa-star" style="color: #A3C7D6"></i> <%= current_user.mom.recent_booking.midwife.speciality %> </h5>
+              <h5><i class="fa-solid fa-hourglass-half" style="color: #A3C7D6"></i> Experience: <%= current_user.mom.recent_booking.midwife.years_experience %> years</h5>
             </div>
           </div>
         <% else %>

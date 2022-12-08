@@ -46,6 +46,16 @@
   height: 300px;
   object-fit: cover;
   border-radius: 50%;
+  border: #DC928D 1px solid;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  align-items: center;
+}
+
+.extra-large-avatar-blue {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
   border: #A3C7D6 1px solid;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
   align-items: center;

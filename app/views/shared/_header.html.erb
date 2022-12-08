@@ -1,7 +1,11 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag("logo.png") %>
+    <% if current_user.is_midwife? %>
+    <%= image_tag("logopink.png") %>
+    <% else %>
+    <%= image_tag("logoblue.png") %>
+    <% end %>
     <% end %>
 
     <div class="" id="navbarSupportedContent">
