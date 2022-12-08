@@ -8,6 +8,8 @@ puts 'Midwives got pregnant..'
 Midwife.destroy_all
 puts 'Moms have to take care of children..'
 Mom.destroy_all
+puts 'Messages need to disapear..'
+Message.destroy_all
 puts 'Bookings were illegible..'
 Booking.destroy_all
 puts "Appointments delayed due to: Act of God"
