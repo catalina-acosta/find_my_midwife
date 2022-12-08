@@ -1,17 +1,17 @@
 <div>
   <div class="index-header">
     <div>
-      <h2>Hello, </h2>
-      <h1><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h1>
+      <h1 style="font-weight: 300;">Hello, </h1>
+      <h1 style="font-weight: 500;color: #FC9D9D;"><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></h1>
     </div>
     <div id="right-header">
-      <i class="fa-solid fa-hand-holding-heart"></i>
+      <i class="fa-solid fa-hand-holding-heart" style="color:#FC9D9D"></i>
     </div>
   </div>
   <div>
     <div class="container">
       <div class="outer-card mb-3 pb-0" id="midwife-card">
-        <div class="background-card background-h3">
+        <div class="background-card background-h3 pb-0">
           <h2>Upcoming Appointment</h2>
           <%= link_to calendar_path, class: "link-pink" do %>
             <h3 style="font-weight: bold">See all</h3>
