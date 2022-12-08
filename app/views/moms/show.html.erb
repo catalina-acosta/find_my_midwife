@@ -10,6 +10,7 @@
     <p><i class="fa fa-user"></i>  <strong><%= @mom.user.first_name %> <%= @mom.user.last_name %></strong></p>
     <p><i class="fa fa-location-dot"></i>   <%= @mom.user.address %></p>
     <p><i class="fa fa-phone"></i>   <%= @mom.phone %></p>
+    <p> About: <%= @mom.bio %></p>
     <div style="width: 100%; height: 150px; border: 1px; border-style: solid;"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
