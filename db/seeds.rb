@@ -277,7 +277,6 @@ user21 = User.new do |u|
   u.last_name = "Corchado"
   u.address = "Gutschmidtstraße 52, Berlin"
   u.email = "v.corchado@gmail.com"
-  u.bio = "Hey there! I come from Valencia, Spain but I have lived in Berlin for the past 5 years. Love working with new born babys and moms :) also fluent in spanish, english and german."
   u.password = "123456"
   u.password_confirmation = "123456"
   u.is_midwife = true
@@ -586,6 +585,7 @@ midwife21 = Midwife.new do |u|
   u.speciality = "Postpartum care"
   u.years_experience = "4"
   u.availability = 'Tue, 22 Nov 2022'
+  u.bio = "Hey there! I come from Valencia, Spain but I have lived in Berlin for the past 5 years. Love working with new born babys and moms :) also fluent in spanish, english and german."
   u.photo.attach(io: midwife21, filename: 'midwife21.jpg', content_type: 'image/jpg')
 end
 midwife21.user = user21
