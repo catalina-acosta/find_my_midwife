@@ -3,24 +3,20 @@
   height: 320px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow:  0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .mom-info-card {
   margin-top: 5px;
   padding: 5px 10px;
-  background-color: #68B4AC;
+  background-color: #ffff;
 }
 
 .midwife-info-card {
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 5px;
   padding: 5px 10px;
   background-color: #ffff;
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
 }
-
 .location-card {
   margin: 10px 10px;
 }

@@ -2,20 +2,20 @@
   <div>
     <%= cl_image_tag @mom.photo.key, class:"show-img center mt-2"%>
   </div>
-  <% if current_user.is_midwife? %>
-    <div class="midwife-info-card">
-  <% else %>
-    <div class="mom-info-card">
-  <% end %>
-    <p><i class="fa fa-user"></i>  <strong><%= @mom.user.first_name %> <%= @mom.user.last_name %></strong></p>
-    <p><i class="fa fa-location-dot"></i>   <%= @mom.user.address %></p>
-    <p><i class="fa fa-phone"></i>   <%= @mom.phone %></p>
-    <p> <%= @mom.bio %></p>
-    <div style="width: 100%; height: 150px; border: 1px; border-style: solid;"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+    <% if current_user.is_midwife? %>
+      <div class="midwife-info-card">
+    <% else %>
+      <div class="mom-info-card">
+    <% end %>
+      <p><i class="fa fa-user"></i>  <strong><%= @mom.user.first_name %> <%= @mom.user.last_name %></strong></p>
+      <p><i class="fa fa-location-dot"></i>   <%= @mom.user.address %></p>
+      <p><i class="fa fa-phone"></i>   <%= @mom.phone %></p>
+      <p> <%= @mom.bio %></p>
+      <div style="width: 100%; height: 150px; border: 1px; border-style: solid;"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
   </div>
   <% if current_user.mom == @mom %>
     <% if !current_user.is_midwife && current_user.mom= @mom%>

@@ -9,17 +9,18 @@
   <% else %>
     <div class="inner-card" id="mom-card">
   <% end %>
-      <div class="d-flex align-items-center">
-      <h2><%= @midwife.user.first_name %> <%= @midwife.user.last_name %></h2>
-      </div>
-      <div class="inner-card">
-      <% if current_user.midwife = @midwife %>
-        <p>Address: <%= @midwife.user.address %></p>
+    <div class="inner-card">
+      <% if current_user.is_midwife? %>
+        <div class="midwife-info-card">
+      <% else %>
+        <div class="mom-info-card">
       <% end %>
-      <p>Available from: <%= @midwife.availability.strftime("%d/%m/%Y")%></p>
-      <p> <%= @midwife.years_experience %> Years working in: <%= @midwife.speciality%></p>
-      <p> <%= @midwife.bio %></p>
-      </div>
+        <i class="fa fa-user"></i> <strong><%= @midwife.user.first_name %> <%= @midwife.user.last_name %></strong>
+        <p></p>
+        <p>Available from: <%= @midwife.availability.strftime("%d/%m/%Y")%></p>
+        <p> <%= @midwife.years_experience %> Years working in: <%= @midwife.speciality%></p>
+        <p> <%= @midwife.bio %></p>
+    </div>
 
       <% if current_user.is_midwife && current_user.midwife = @midwife %>
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#profile">
