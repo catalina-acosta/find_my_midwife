@@ -67,7 +67,6 @@ user2 = User.new do |u|
   u.last_name = "Wrangler"
   u.address = "Weichselstraße 31, Berlin"
   u.email = "lisa.wrangler@gmail.com"
-  u.bio = "Hi there! My name is Lisa, I come from Berlin and I am expecting my thrid child"
   u.password = "123456"
   u.password_confirmation = "123456"
   u.is_midwife = false
@@ -79,7 +78,6 @@ user3 = User.new do |u|
   u.last_name = "Mayer"
   u.address = "Schönhauser Straße 49, Berlin"
   u.email = "annemarie@gmail.com"
-  u.bio = "I am Anne-Marie, first time pregnant and really looking forward to have a midwife :) "
   u.password = "123456"
   u.password_confirmation = "123456"
   u.is_midwife = false
@@ -102,7 +100,6 @@ user5 = User.new do |u|
   u.last_name = "Schulze"
   u.address = "Frankfurter Allee 198, Berlin"
   u.email = "krissy92@gmail.com"
-  u.bio = "Hello, Kristin here :) I come from Southern Germay and I recently moved to Berlin with my partner. We are expecting our first baby!"
   u.password = "123456"
   u.password_confirmation = "123456"
   u.is_midwife = false
@@ -390,7 +387,6 @@ user31 = User.new do |u|
   u.last_name = "Acosta"
   u.address = "Werbellinstraße 36, Berlin"
   u.email = "cata.acosta@gmail.com"
-  u.bio = "Hey there! My name is Catalina, I come from Colombia and I've been living and working as a midwife for the past 4 years. Helping moms in this journey is what I love most about my job :)"
   u.password = "123456"
   u.password_confirmation = "123456"
   u.is_midwife = true
@@ -402,7 +398,6 @@ user32 = User.new do |u|
   u.last_name = "Strömbäck"
   u.address = "Richardstraße 99, Berlin"
   u.email = "alicia.stromback@gmail.com"
-  u.bio = "My name is Alicia, I come from a small town in Sweeden and I recently moved to Berlin. I am expecting my second child but it feels as if it was the first one!"
   u.password = "123456"
   u.password_confirmation = "123456"
   u.is_midwife = false
@@ -422,6 +417,7 @@ mom1.save
 mom2 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Thu, 24 Nov 2022'
+  u.bio = "Hi there! My name is Lisa, I come from Berlin and I am expecting my thrid child"
   u.photo.attach(io: mom2, filename: 'mom2.jpg', content_type: 'image/jpg')
 end
 mom2.user = user2
@@ -430,6 +426,7 @@ mom2.save
 mom3 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Sat, 26 Nov 2022'
+  u.bio = "I am Anne-Marie, first time pregnant and really looking forward to have a midwife :) "
   u.photo.attach(io: mom3, filename: 'mom3.jpg', content_type: 'image/jpg')
 end
 mom3.user = user3
@@ -446,6 +443,7 @@ mom4.save
 mom5 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Mon, 28 Nov 2022'
+  u.bio = "Hello, Kristin here :) I come from Southern Germay and I recently moved to Berlin with my partner. We are expecting our first baby!"
   u.photo.attach(io: mom5, filename: 'mom5.jpg', content_type: 'image/jpg')
 end
 mom5.user = user5
@@ -566,6 +564,7 @@ mom19.save
 mom20 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Tue, 20 Dec 2022'
+  u.bio = "My name is Alicia, I come from a small town in Sweeden and I recently moved to Berlin. I am expecting my second child but it feels as if it was the first one!"
   u.photo.attach(io: mom20, filename: 'mom20.jpg', content_type: 'image/jpg')
 end
 mom20.user = user32
@@ -676,6 +675,7 @@ midwife31 = Midwife.new do |u|
   u.speciality = "Birth preparation"
   u.years_experience = "4"
   u.availability = 'Mon, 12 Dec 2022'
+  u.bio = "Hey there! My name is Catalina, I come from Colombia and I've been living and working as a midwife for the past 4 years. Helping moms in this journey is what I love most about my job :)"
   u.photo.attach(io: midwife31, filename: 'midwife31.jpg', content_type: 'image/jpg')
 end
 midwife31.user = user31
