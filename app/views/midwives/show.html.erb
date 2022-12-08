@@ -49,7 +49,12 @@
             </div>
       <% else %>
         <%= link_to 'Send Request', midwife_bookings_path(@midwife),  data: {turbo_method: :post}, class: 'btn btn-blue' %>
-        <%= link_to 'Back', search_path, class: 'btn btn-blue' %>
+        <%= link_to search_path, class: 'btn-ghost-blue' do %>
+        <div class="d-flex align-items-center">
+          <i class="fa-solid fa-arrow-left pe-2"></i>
+            Back
+        </div>
+        <% end %>
       <% end %>
     </div>
   </div>
