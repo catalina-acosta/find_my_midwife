@@ -6,7 +6,7 @@
   margin-bottom: 8px;
 }
 #chatroom-midwife {
-  background-color: #DC928D;
+  background-color: #ffff;
   padding-top: 16px;
 }
 
@@ -15,7 +15,7 @@
 }
 
 #midwife-background{
-  background-color: #F5C2BD;
+  background-color: #ffff;
 }
 
 #mom-background{
@@ -33,25 +33,36 @@
 .chatroom-time {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+
+  p {
+    align-items: center;
+    margin: 0 !important;
+  }
 }
 
 .message-bubble {
-  background-color: white;
-  border-radius: 12px;
-  padding: 8px;
-  margin-bottom: 8px;
+  background-color: #A3C7D6;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  padding: 24px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
 }
 
 .message-bubble-user {
-  background-color: #F5C2BD;
-  border-radius: 12px;
-  padding: 8px;
-  margin-bottom: 8px;
+  background-color: #FFCAC2;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-left-radius: 18px;
+  padding: 24px;
+  width: 60%;
   display: flex;
-  align-items: flex-end;
   flex-direction: column;
+  align-self: flex-end;
 }
 
 .header-chat{
@@ -63,4 +74,38 @@
   justify-content: flex-start;
   gap: 16px;
   align-items: center;
+}
+
+.input-message-form {
+  display: flex;
+  bottom: 34px;
+  width: 100%;
+  position: fixed;
+}
+.form-control {
+  border-radius: 12px;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.time-message-sent {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chatroom {
+  position: relative;
+  padding-bottom: 100px !important;
+  min-height: calc(100vh - 165px);
+}
+
+.chatroom-form-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-right: 16px;
 }
