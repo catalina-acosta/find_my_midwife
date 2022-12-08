@@ -1,29 +1,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <div class="container">
-  <div>
-    <%= cl_image_tag @midwife.photo.key, class:"show-img center mt-2"%>
-  </div>
-  <div class="outer-card align-items-center">
   <% if current_user.is_midwife? %>
     <div class="inner-card" id="midwife-card">
   <% else %>
-    <div class="inner-card" id="mom-card">
+    <div class="inner-card" id="mom-card" style="margin-top: 20px; padding-top: 5px; margin-bottom: 60px;">
   <% end %>
-    <div class="inner-card">
       <% if current_user.is_midwife? %>
         <div class="midwife-info-card">
       <% else %>
         <div class="mom-info-card">
       <% end %>
-        <i class="fa fa-user"></i> <strong><%= @midwife.user.first_name %> <%= @midwife.user.last_name %></strong>
+        <%= cl_image_tag @midwife.photo.key, class:"extra-large-avatar center mt-2"%>
+        <i class="fa fa-user" style="color: #A3C7D6"></i> <strong><%= @midwife.user.first_name %> <%= @midwife.user.last_name %></strong>
         <p></p>
         <p>Available from: <%= @midwife.availability.strftime("%d/%m/%Y")%></p>
         <p> <%= @midwife.years_experience %> Years working in: <%= @midwife.speciality%></p>
         <p> <%= @midwife.bio %></p>
-    </div>
 
       <% if current_user.is_midwife && current_user.midwife = @midwife %>
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#profile">
+          <button type="button" class="btn btn-accept" data-bs-toggle="modal" data-bs-target="#profile">
               Edit Profile
             </button>
 
@@ -57,5 +52,4 @@
         <% end %>
       <% end %>
     </div>
-  </div>
 </div>

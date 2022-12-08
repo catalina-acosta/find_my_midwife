@@ -2,7 +2,7 @@
   <% if current_user.is_midwife? %>
     <div class="container pb-5">
         <div class="background-card pb-0 mt-1 mb-2">
-          <h2 style="font-weight: bold">Bookings</h2>
+          <h2 style="font-weight: 500">Bookings</h2>
         </div>
         <% if !@bookings.empty? %>
           <% @bookings.each do |booking| %>
@@ -36,16 +36,16 @@
   <% else %>
     <div class="container">
       <div class="outer-card mt-3 mb-5" id="mom-card">
-        <div class="background-card">
+        <div class="background-card pb-0">
           <h2>Appointments</h2>
         </div>
         <% if !@bookings.empty? %>
           <% @bookings.each do |booking| %>
             <% unless booking.pending? %>
-              <div class="inner-card">
+              <div class="inner-card pt-2">
                   <div class="name-avatar" style="align-items: end;">
                     <div class="picture-name">
-                      <%= cl_image_tag booking.midwife.photo.key , class: "avatar"%>
+                      <%= cl_image_tag booking.midwife.photo.key , class: "avatar-blueb"%>
                       <h4><%= booking.midwife.user.first_name %> <%= booking.midwife.user.last_name %></h4>
                     </div>
                   </div>
