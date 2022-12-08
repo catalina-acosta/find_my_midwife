@@ -1,9 +1,17 @@
 <div class="container" style="margin-bottom:60px;">
-  <div>
-    <%= cl_image_tag @mom.photo.key, class:"show-img center mt-2"%>
-  </div>
     <% if current_user.is_midwife? %>
-      <div class="midwife-info-card">
+
+    <div class="midwife-info-card" style="margin-top: 20px;">
+    <% else %>
+      <div class="mom-info-card" style="margin-top: 20px;">
+    <% end %>
+      <%= cl_image_tag @mom.photo.key, class:"extra-large-avatar-blue center mt-2"%>
+      <p style="margin-top: 20px;"><i class="fa fa-user" style="color: #A3C7D6"></i>  <strong><%= @mom.user.first_name %> <%= @mom.user.last_name %></strong></p>
+      <p><i class="fa fa-location-dot" style="color: #A3C7D6"></i>   <%= @mom.user.address %></p>
+      <p><i class="fa fa-phone" style="color: #A3C7D6"></i>   <%= @mom.phone %></p>
+      <p style="text-align: justify;"> <%= @mom.bio %></p>
+
+      <!-- <div class="midwife-info-card">
       <p><i class="fa fa-user" style="color:#FC9D9D"></i>  <strong><%= @mom.user.first_name %> <%= @mom.user.last_name %></strong></p>
       <p><i class="fa fa-location-dot" style="color:#FC9D9D"></i>   <%= @mom.user.address %></p>
       <p><i class="fa fa-phone" style="color:#FC9D9D"></i>   <%= @mom.phone %></p>
@@ -13,7 +21,8 @@
       <p><i class="fa fa-location-dot" style="color: #A3C7D6"></i>   <%= @mom.user.address %></p>
       <p><i class="fa fa-phone" style="color: #A3C7D6"></i>   <%= @mom.phone %></p>
     <% end %>
-      <p> <%= @mom.bio %></p>
+      <p> <%= @mom.bio %></p> -->
+
       <div style="width: 100%; height: 150px; border: 1px; border-style: solid;"
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
@@ -22,7 +31,7 @@
   </div>
   <% if current_user.mom == @mom %>
     <% if !current_user.is_midwife && current_user.mom= @mom%>
-          <button type="button" class="btn btn-blue" data-bs-toggle="modal" data-bs-target="#profile" style="margin-left: 10px;">
+          <button type="button" class="btn btn-blue" data-bs-toggle="modal" data-bs-target="#profile" style="margin-left: 10px; margin-top: 10px;">
               Edit Profile
             </button>
 
@@ -52,22 +61,20 @@
           <% if @mom == booking.mom && booking.confirmed? %>
             <%= simple_form_for([@mom, @note]) do |f| %>
               <%= f.input :content, label: 'Notes', placeholder: 'Add your notes here!' %>
-              <%= f.submit class: "btn btn-primary" %>
+              <%= f.submit class: "btn btn-accept" %>
             <% end %>
             <% @mom.notes.each do |note| %>
-            <div class="inner-card" style="border:1px; border-style:solid; border-radius: 0%; padding: 5px 5px; margin-top: 5px;">
+            <div class="inner-card" style="border:1px; padding: 5px 5px; margin-top: 20px;">
               <p><%= note.content %></p>
-            </div>
-              <!-- Button trigger modal -->
-
-              <div class="mb-5 pb-2">
+              <div class="icons-side">
                 <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#noteModal<%= note.id %>">
-                  <i class="fa-regular fa-pen-to-square"></i>
+                  <i class="fa-regular fa-pen-to-square" style="color:#FC9D9D"></i>
                 </button>
                 <%= link_to note_path(note), data: {turbo_method: :delete, confirm: "Are you sure you want to remove this note?"} do %>
-                <i class="fa-regular fa-trash-can"></i>
+                <i class="fa-regular fa-trash-can" style="color:#FC9D9D"></i>
                 <% end %>
               </div>
+            </div>
             </div>
 
 
