@@ -277,6 +277,7 @@ user21 = User.new do |u|
   u.last_name = "Corchado"
   u.address = "Gutschmidtstraße 52, Berlin"
   u.email = "v.corchado@gmail.com"
+  u.bio = "Hey there! I come from Valencia, Spain but I have lived in Berlin for the past 5 years. Love working with new born babys and moms :) also fluent in spanish, english and german."
   u.password = "123456"
   u.password_confirmation = "123456"
   u.is_midwife = true
@@ -749,7 +750,7 @@ booking9.save
 appointment1 = Appointment.new do |u|
   u.title = "Get-to-know"
   u.status = "confirmed"
-  u.start_time = "Wed, 07 Dec 2022 18:49:08.045702000 CET +01:00"
+  u.start_time = "Mon, 12 Dec 2022 14:00:00.045702000 CET +01:00"
 end
 appointment1.booking = booking2
 appointment1.save
@@ -757,7 +758,7 @@ appointment1.save
 appointment2 = Appointment.new do |u|
   u.title = "Weekly-check-up"
   u.status = "confirmed"
-  u.start_time = "Fri, 09 Dec 2022 18:00:00.045702000 CET +01:00"
+  u.start_time = "Fri, 09 Dec 2022 11:00:00.045702000 CET +01:00"
 end
 appointment2.booking = booking3
 appointment2.save
@@ -765,7 +766,7 @@ appointment2.save
 appointment3 = Appointment.new do |u|
   u.title = "Weekly-check-up"
   u.status = "confirmed"
-  u.start_time = "Fri, 16 Dec 2022 18:00:00.045702000 CET +01:00"
+  u.start_time = "Fri, 16 Dec 2022 11:00:00.045702000 CET +01:00"
 end
 appointment3.booking = booking3
 appointment3.save
@@ -773,11 +774,18 @@ appointment3.save
 appointment4 = Appointment.new do |u|
   u.title = "Weekly-Check-up"
   u.status = "confirmed"
-  u.start_time = "Fri, 23 Dec 2022 16:00:00.045702000 CET +01:00"
+  u.start_time = "Fri, 23 Dec 2022 11:00:00.045702000 CET +01:00"
 end
 appointment4.booking = booking3
 appointment4.save
-puts "done"
+
+appointment5 = Appointment.new do |u|
+  u.title = "Weekly-Check-up"
+  u.status = "confirmed"
+  u.start_time = "Tue, 13 Dec 2022 9:00:00.045702000 CET +01:00"
+end
+appointment5.booking = booking9
+appointment5.save
 
 #messages
 
