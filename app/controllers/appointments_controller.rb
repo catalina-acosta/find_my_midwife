@@ -25,7 +25,7 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new(appointment_params)
     @appointment.booking_id = params[:booking_id]
     if @appointment.save
-      redirect_to calendar_path
+      redirect_to calendar_path, notice: "Your appointment has been set!"
     else
       render :new, status: :unprocessable_entity
     end

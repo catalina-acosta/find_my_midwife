@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
 
   def accepted
     @booking.confirmed!
-    redirect_to midwives_path
+    redirect_to midwives_path, notice: "New request has been accepted"
   end
 
   def cancelled
