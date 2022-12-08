@@ -8,9 +8,9 @@
           <% mom.bookings.each do |booking| %>
             <% unless booking.appointments.empty? || booking.mom != mom || booking.midwife != current_user.midwife%>
               <div class="outer-card-appointment w-100">
-              <%= link_to mom_path(mom), class: "text-decoration-none text-dark" do %>
-                <h4><%= mom.user.first_name %> <%= mom.user.last_name %> (<%= booking.appointments.count %>)
-                <%= cl_image_tag mom.photo.key, class: "avatar-large" %></h4>
+              <%= link_to mom_path(mom), class: "text-decoration-none text-dark", style:"display: flex; align-items: center;" do %>
+                <%= cl_image_tag mom.photo.key, class: "avatar-large" %>
+                <h4><%= mom.user.first_name %> <%= mom.user.last_name %> (<%= booking.appointments.count %>)</h4>
               <% end %>
               <% booking.appointments.each do |appointment| %>
                 <div class="inner-card-appointment">
