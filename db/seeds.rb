@@ -564,7 +564,7 @@ mom19.save
 mom20 = Mom.new do |u|
   u.phone = "0 5734 512954"
   u.due_date = 'Tue, 20 Dec 2022'
-  u.bio = "My name is Alicia, I come from a small town in Sweeden and I recently moved to Berlin. I am expecting my second child but it feels as if it was the first one!"
+  u.bio = "My name is Alicia, I come from a small town in Sweden and I recently moved to Berlin. I am expecting my second child but it feels as if it was the first one!"
   u.photo.attach(io: mom20, filename: 'mom20.jpg', content_type: 'image/jpg')
 end
 mom20.user = user32
