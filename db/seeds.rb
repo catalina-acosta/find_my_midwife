@@ -745,6 +745,20 @@ end
 booking9.midwife = midwife31
 booking9.mom = mom20
 booking9.save
+
+booking10 = Booking.new do |u|
+  u.status = 1
+end
+booking10.midwife = midwife31
+booking10.mom = mom9
+booking10.save
+
+booking11 = Booking.new do |u|
+  u.status = 1
+end
+booking11.midwife = midwife31
+booking11.mom = mom10
+booking11.save
 # appointments
 
 appointment1 = Appointment.new do |u|
@@ -782,7 +796,7 @@ appointment4.save
 appointment5 = Appointment.new do |u|
   u.title = "Weekly-Check-up"
   u.status = "confirmed"
-  u.start_time = "Tue, 13 Dec 2022 9:00:00.045702000 CET +01:00"
+  u.start_time = "Tue, 13 Dec 2022 12:45:00.045702000 CET +01:00"
 end
 appointment5.booking = booking9
 appointment5.save
@@ -791,6 +805,7 @@ appointment5.save
 
 message1 = Message.new do |u|
   u.content = "Hello!"
+  u.created_at = "Fri, 09 Dec 2022 12:30:37.703296000 CET +01:00"
 end
 message1.booking = booking1
 message1.user = user1
@@ -798,6 +813,7 @@ message1.save
 
 message2 = Message.new do |u|
   u.content = "Hi Catalina"
+  u.created_at = "Fri, 09 Dec 2022 12:14:37.703296000 CET +01:00"
 end
 message2.booking = booking2
 message2.user = user2
@@ -805,6 +821,7 @@ message2.save
 
 message3 = Message.new do |u|
   u.content = "I am feeling much better, thank you!"
+  u.created_at = "Fri, 09 Dec 2022 12:11:37.703296000 CET +01:00"
 end
 message3.booking = booking3
 message3.user = user3
@@ -812,6 +829,7 @@ message3.save
 
 message4 = Message.new do |u|
   u.content = "Are you comming by tomorrow?"
+  u.created_at = "Fri, 09 Dec 2022 11:56:37.703296000 CET +01:00"
 end
 message4.booking = booking4
 message4.user = user4
@@ -819,6 +837,7 @@ message4.save
 
 message5 = Message.new do |u|
   u.content = "My baby is coughing a lot today"
+  u.created_at = "Fri, 09 Dec 2022 11:51:37.703296000 CET +01:00"
 end
 message5.booking = booking5
 message5.user = user5
@@ -826,6 +845,7 @@ message5.save
 
 message6 = Message.new do |u|
   u.content = "Can we schedule an appointmment please?"
+  u.created_at = "Fri, 09 Dec 2022 11:35:37.703296000 CET +01:00"
 end
 message6.booking = booking6
 message6.user = user6
@@ -833,6 +853,7 @@ message6.save
 
 message7 = Message.new do |u|
   u.content = "Can we schedule an appointmment please?"
+  u.created_at = "Fri, 09 Dec 2022 10:45:37.703296000 CET +01:00"
 end
 message7.booking = booking7
 message7.user = user7
@@ -840,6 +861,7 @@ message7.save
 
 message8 = Message.new do |u|
   u.content = "Can we schedule an appointmment please?"
+  u.created_at = "Fri, 09 Dec 2022 9:25:37.703296000 CET +01:00"
 end
 message8.booking = booking8
 message8.user = user2
@@ -847,8 +869,26 @@ message8.save
 
 message9 = Message.new do |u|
   u.content = "Can we schedule an appointmment please?"
+  u.created_at = "Fri, 09 Dec 2022 9:11:37.703296000 CET +01:00"
 end
 message9.booking = booking9
 message9.user = user32
 message9.save
+
+message10 = Message.new do |u|
+  u.content = "Can we schedule an appointmment please?"
+  u.created_at = "Fri, 09 Dec 2022 9:11:37.703296000 CET +01:00"
+end
+message10.booking = booking10
+message10.user = user32
+message10.save
+
+message11 = Message.new do |u|
+  u.content = "Can we schedule an appointmment please?"
+  u.created_at = "Fri, 09 Dec 2022 9:11:37.703296000 CET +01:00"
+end
+message11.booking = booking11
+message11.user = user32
+message11.save
+
 puts "done"
