@@ -14,7 +14,7 @@
           <div class="w-100">
             <div class="chatroom-time">
               <%= link_to booking_path(booking), class: "text-decoration-none" do %>
-                <%= booking.mom.user.first_name %>
+                <div style= "color: #FC9D9D"><%= booking.mom.user.first_name %></div>
               <% end %>
               <p>
                 <%= booking.messages.last.created_at.strftime("%H:%M") %>
@@ -22,7 +22,7 @@
             </div>
             <div>
               <div>
-                <%= truncate(booking.messages.last.content, length: 20) %>
+                <%= truncate(booking.messages.last.content, length: 30) %>
               </div>
             </div>
           </div>
@@ -32,7 +32,7 @@
     <% end %>
 <% else %>
   <div class="chatroom-index" id="chatroom-mom">
-    <h1>messages</h1>
+    <h1>Chats</h1>
   </div>
     <% @bookings.each do |booking| %>
       <% if booking.messages.empty? %>
@@ -45,7 +45,7 @@
           <div class="w-100">
             <div class="chatroom-time">
               <%= link_to booking_path(booking), class: "text-decoration-none" do %>
-                <%= booking.midwife.user.first_name %>
+                <div style= "color: #A3C7D6"><%= booking.midwife.user.first_name %> </div>
               <% end %>
               <p>
                 <%= booking.messages.last.created_at.strftime("%H:%M") %>
@@ -53,7 +53,7 @@
             </div>
             <div>
               <div>
-                <%= truncate(booking.messages.last.content, length: 20) %>
+                <%= truncate(booking.messages.last.content, length: 30) %>
               </div>
             </div>
           </div>
