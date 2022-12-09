@@ -9,7 +9,7 @@
     <% else %>
       <div class="mom-info-card" style="margin-top: 20px;">
         <%= cl_image_tag @mom.photo.key, class:"extra-large-avatar-blue center mt-2"%>
-        <p><i class="fa fa-user" style="color: #A3C7D6"></i>  <strong><%= @mom.user.first_name %> <%= @mom.user.last_name %></strong></p>
+        <p style="margin-top: 20px;"><i class="fa fa-user" style="color: #A3C7D6"></i>  <strong><%= @mom.user.first_name %> <%= @mom.user.last_name %></strong></p>
         <p><i class="fa fa-location-dot" style="color: #A3C7D6"></i>   <%= @mom.user.address %></p>
         <p><i class="fa fa-phone" style="color: #A3C7D6"></i>   <%= @mom.phone %></p>
         <p> <%= @mom.bio %></p>
