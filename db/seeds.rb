@@ -852,7 +852,7 @@ message6.user = user6
 message6.save
 
 message7 = Message.new do |u|
-  u.content = "Can we schedule an appointmment please?"
+  u.content = "Can you come please come by this week?"
   u.created_at = "Fri, 09 Dec 2022 10:45:37.703296000 CET +01:00"
 end
 message7.booking = booking7
@@ -868,7 +868,7 @@ message8.user = user2
 message8.save
 
 message9 = Message.new do |u|
-  u.content = "Can we schedule an appointmment please?"
+  u.content = "Hi Catalina, can we please schedule an appointmment in January please?"
   u.created_at = "Fri, 09 Dec 2022 9:11:37.703296000 CET +01:00"
 end
 message9.booking = booking9
@@ -884,7 +884,7 @@ message10.user = user32
 message10.save
 
 message11 = Message.new do |u|
-  u.content = "Can we schedule an appointmment please?"
+  u.content = "Hi Catalina, can we please schedule an appointmment in January please?"
   u.created_at = "Fri, 09 Dec 2022 9:11:37.703296000 CET +01:00"
 end
 message11.booking = booking11
