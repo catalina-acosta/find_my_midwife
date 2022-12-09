@@ -11,7 +11,8 @@
 }
 
 #chatroom-mom {
-  background-color: #68B4AC;
+  background-color: #ffff;
+  padding-top: 16px;
 }
 
 #midwife-background{
@@ -19,7 +20,7 @@
 }
 
 #mom-background{
-  background-color: #7FE9DE;
+  background-color: #ffff;
 }
 
 
@@ -47,7 +48,7 @@
   border-top-left-radius: 18px;
   border-top-right-radius: 18px;
   border-bottom-right-radius: 18px;
-  padding: 24px;
+  padding: 15px;
   width: 60%;
   display: flex;
   flex-direction: column;
@@ -58,7 +59,7 @@
   border-top-left-radius: 18px;
   border-top-right-radius: 18px;
   border-bottom-left-radius: 18px;
-  padding: 24px;
+  padding: 15px;
   width: 60%;
   display: flex;
   flex-direction: column;
@@ -107,4 +108,10 @@
   position: absolute;
   bottom: 0;
   width: 96vw;
+  margin: auto;
+}
+
+.btn:hover {
+  background-color: #FFCAC2;
+  border-color: #DC928D;
 }
