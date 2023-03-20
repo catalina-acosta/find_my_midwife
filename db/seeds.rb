@@ -764,7 +764,7 @@ booking11.save
 appointment1 = Appointment.new do |u|
   u.title = "Get-to-know"
   u.status = "confirmed"
-  u.start_time = "Mon, 12 Dec 2022 14:00:00.045702000 CET +01:00"
+  u.start_time = Time.now + 4.days + 15.minutes
 end
 appointment1.booking = booking2
 appointment1.save
@@ -772,7 +772,7 @@ appointment1.save
 appointment2 = Appointment.new do |u|
   u.title = "Weekly-check-up"
   u.status = "confirmed"
-  u.start_time = "Fri, 09 Dec 2022 11:00:00.045702000 CET +01:00"
+  u.start_time = Time.now + 7.days + 2.hours
 end
 appointment2.booking = booking3
 appointment2.save
@@ -780,7 +780,7 @@ appointment2.save
 appointment3 = Appointment.new do |u|
   u.title = "Weekly-check-up"
   u.status = "confirmed"
-  u.start_time = "Fri, 16 Dec 2022 11:00:00.045702000 CET +01:00"
+  u.start_time = Time.now + 14.days + 2.hours
 end
 appointment3.booking = booking3
 appointment3.save
@@ -788,7 +788,7 @@ appointment3.save
 appointment4 = Appointment.new do |u|
   u.title = "Weekly-Check-up"
   u.status = "confirmed"
-  u.start_time = "Fri, 23 Dec 2022 11:00:00.045702000 CET +01:00"
+  u.start_time = Time.now + 21.days + 2.hours
 end
 appointment4.booking = booking3
 appointment4.save
@@ -796,7 +796,7 @@ appointment4.save
 appointment5 = Appointment.new do |u|
   u.title = "Weekly-Check-up"
   u.status = "confirmed"
-  u.start_time = "Tue, 13 Dec 2022 12:45:00.045702000 CET +01:00"
+  u.start_time = Time.now + 16.days + 4.hours + 30.minutes
 end
 appointment5.booking = booking9
 appointment5.save
